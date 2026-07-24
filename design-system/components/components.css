@@ -1,0 +1,156 @@
+.content[data-active-view="components"]::after {
+  display: none;
+}
+
+.content[data-active-view="components"] .ds-components-page {
+  position: relative;
+  inset: auto;
+  min-block-size: 100%;
+}
+
+.ds-components-page {
+  box-sizing: border-box;
+  padding: var(--ds-page-top-gap) var(--ds-page-gutter) 72px;
+  color: var(--ds-color-text-default);
+  font-family: var(--ds-font-family-ui);
+}
+
+.ds-components-page *,
+.ds-components-page *::before,
+.ds-components-page *::after {
+  box-sizing: border-box;
+}
+
+.ds-components-page__header {
+  max-inline-size: 720px;
+  margin-block-end: var(--ds-page-intro-gap);
+}
+
+.ds-components-page__header h1 {
+  position: static;
+  margin: 0;
+  color: var(--ds-color-text-strong);
+  font: var(--ds-font-weight-heading) 30px / 38px var(--ds-font-family-ui);
+}
+
+.ds-components-page__header p {
+  margin: var(--ds-page-heading-gap) 0 0;
+  color: var(--ds-color-text-muted);
+  font: var(--ds-font-weight-normal) var(--ds-font-size-ui) / 22px var(--ds-font-family-ui);
+}
+
+.ds-components-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: var(--ds-page-section-gap);
+}
+
+.ds-component-card {
+  min-inline-size: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid var(--ds-color-border-subtle);
+  border-radius: var(--ds-radius-panel);
+  background: var(--ds-color-surface-raised);
+  box-shadow: var(--ds-shadow-static);
+}
+
+.ds-component-card__label {
+  margin: 0;
+  color: var(--ds-color-text-muted);
+  font: var(--ds-font-weight-control) var(--ds-font-size-ui) / var(--ds-line-height-ui) var(--ds-font-family-ui);
+}
+
+.ds-component-specimen {
+  position: relative;
+  min-inline-size: 0;
+}
+
+.ds-component-specimen--centered {
+  min-block-size: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-page-control-gap);
+  flex-wrap: wrap;
+}
+
+.ds-component-specimen--pill-button {
+  inline-size: min(100%, 320px);
+  margin-inline: auto;
+}
+
+.ds-component-specimen--select {
+  min-block-size: 236px;
+}
+
+.ds-component-specimen--context {
+  min-block-size: 226px;
+}
+
+.ds-component-specimen--context .ds-context-menu {
+  position: relative;
+  inline-size: 100%;
+  max-inline-size: 220px;
+}
+
+.ds-component-specimen--upload .ds-upload {
+  inline-size: 100%;
+}
+
+.ds-component-specimen--login {
+  min-block-size: 608px;
+}
+
+.ds-component-specimen--login .ds-login {
+  position: relative;
+  inset: auto;
+  inline-size: 100%;
+  transform: none;
+}
+
+.ds-component-specimen--side-menu {
+  block-size: 410px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid var(--ds-color-border-subtle);
+  border-radius: var(--ds-radius-panel);
+}
+
+.ds-component-specimen--side-menu .ds-side-panel {
+  max-inline-size: 100%;
+}
+
+.ds-component-specimen--modal {
+  min-block-size: 88px;
+  display: grid;
+  place-items: center;
+}
+
+.ds-component-specimen .ds-select-menu {
+  inline-size: 100%;
+}
+
+.ds-component-specimen .ds-icon-list-row {
+  padding-inline: 8px;
+}
+
+.ds-component-specimen .ds-bar {
+  justify-content: center;
+}
+
+@media (max-width: 1120px) {
+  .ds-components-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .ds-components-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

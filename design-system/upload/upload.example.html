@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aligned Upload Example</title>
+    <link rel="stylesheet" href="upload.css">
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: var(--ds-color-surface);
+      }
+
+      .example-upload {
+        width: min(440px, calc(100vw - 40px));
+      }
+    </style>
+  </head>
+  <body data-ds-theme="aligned">
+    <section class="ds-upload example-upload" aria-labelledby="example-upload-title" data-ds-upload data-ds-upload-demo data-upload-state="idle">
+      <h1 class="ds-upload__title" id="example-upload-title">Upload your resume</h1>
+      <p class="ds-upload__description">Please upload your most recent CV in PDF format to complete your application.</p>
+
+      <button class="ds-upload__dropzone" type="button" aria-label="Choose resume file" data-ds-upload-dropzone>
+        <span class="ds-upload__browse">Browse Files</span>
+        <span class="ds-upload__prompt">Click to upload <span>or drag and drop</span></span>
+        <span class="ds-upload__help">PDF or DOCX (max. 5MB)</span>
+      </button>
+      <input class="ds-upload__input" type="file" accept=".pdf,.doc,.docx" data-ds-upload-input>
+
+      <div class="ds-upload__file-panel" aria-live="polite">
+        <div class="ds-upload__file-row">
+          <span class="ds-upload__file-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20">
+              <path d="M5.5 3.5h6l3 3v10h-9z"></path>
+              <path d="M11.5 3.5v3h3"></path>
+              <path d="M8 10h4M8 13h4"></path>
+            </svg>
+          </span>
+          <span class="ds-upload__file-copy">
+            <strong class="ds-upload__file-name" data-ds-upload-name>No file selected</strong>
+            <small class="ds-upload__file-size" data-ds-upload-size>0 MB</small>
+            <span class="ds-upload__progress" aria-hidden="true"><span data-ds-upload-progress></span></span>
+          </span>
+          <button class="ds-upload__remove" type="button" aria-label="Remove selected file" data-ds-upload-remove>
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="m6 6 8 8M14 6l-8 8"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="ds-upload__actions">
+          <button class="ds-upload__cancel" type="button" data-ds-upload-cancel>Cancel</button>
+          <button class="ds-upload__submit" type="button" data-ds-upload-submit>Submit Resume</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="upload.behavior.js"></script>
+  </body>
+</html>

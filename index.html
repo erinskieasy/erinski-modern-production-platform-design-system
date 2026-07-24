@@ -1,0 +1,1411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Turnstile Widgets Replica</title>
+    <link rel="icon" type="image/svg+xml" href="assets/site-icon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="design-system/aligned.css">
+    <link rel="stylesheet" href="design-system/components/components.css">
+  </head>
+  <body>
+    <div class="stage" aria-label="Static dashboard recreation">
+      <aside class="sidebar" id="primary-sidebar" aria-label="Sidebar navigation">
+        <div class="brand">
+          <img class="brand-mark ds-site-icon ds-site-icon--topbar" src="assets/site-icon.svg" alt="">
+          <div class="brand-name">Erinski.easy@intellibus.....</div>
+        </div>
+
+        <div class="sidebar-menu security-collapsed" data-ds-scrollbar>
+          <button class="menu-search-trigger" type="button" aria-haspopup="dialog" aria-controls="command-palette">
+            <svg class="menu-search-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <circle cx="8.6" cy="8.6" r="6"></circle>
+              <path d="m13.1 13.1 4.2 4.2"></path>
+            </svg>
+            <span>Quick search...</span>
+            <kbd>Ctrl K</kbd>
+          </button>
+
+          <div class="section-label label-build">Build</div>
+
+          <div class="nav-row nav-compute" role="button" tabindex="0" data-view-target="dashboard">
+            <svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M5.2 3.6 10 10l-4.8 6.4M10.2 3.6 15 10l-4.8 6.4"></path>
+            </svg>
+            <span>Compute</span>
+          </div>
+
+          <div class="nav-row nav-ai" role="button" tabindex="0" data-view-target="dashboard">
+            <svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M10 3.2v4.1M10 12.7v4.1M3.2 10h4.1M12.7 10h4.1M5 5l2.5 2.5M12.5 12.5 15 15M15 5l-2.5 2.5M7.5 12.5 5 15"></path>
+              <circle cx="10" cy="10" r="1.8"></circle>
+            </svg>
+            <span>AI</span>
+          </div>
+
+          <div class="nav-row nav-jobs" role="button" tabindex="0" data-view-target="jobs">
+            <svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <rect x="3.2" y="6.4" width="13.6" height="9.1" rx="1.4"></rect>
+              <path d="M7.1 6.4V4.8c0-.8.6-1.4 1.4-1.4h3c.8 0 1.4.6 1.4 1.4v1.6M3.2 10.2c4.5 1.9 9.1 1.9 13.6 0M8.6 10.8h2.8"></path>
+            </svg>
+            <span>Jobs</span>
+          </div>
+
+          <div class="nav-row nav-storage" role="button" tabindex="0" data-view-target="dashboard">
+            <svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <rect x="3.2" y="4.4" width="13.6" height="11.2"></rect>
+              <path d="M3.2 7.8h13.6M6.4 10.4h6.8M6.4 13h6.8"></path>
+            </svg>
+            <span>Storage &amp; databases</span>
+          </div>
+
+          <div class="nav-row nav-media" role="button" tabindex="0" data-view-target="dashboard">
+            <svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <circle cx="10" cy="10" r="7.2"></circle>
+              <path d="m8.4 6.8 4.4 3.2-4.4 3.2z"></path>
+            </svg>
+            <span>Media</span>
+          </div>
+
+          <div class="section-label label-protect">Protect &amp; Connect</div>
+
+          <div class="nav-row nav-security" role="button" tabindex="0" data-view-target="dashboard" aria-expanded="false" aria-controls="security-submenu">
+            <svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M10 2.7 15.3 5v4.1c0 3.5-2 6.7-5.3 8.2-3.3-1.5-5.3-4.7-5.3-8.2V5z"></path>
+              <path d="M10 6.2v5.9M10 14.2v.1"></path>
+            </svg>
+            <span>Application security</span>
+            <i class="chevron down" aria-hidden="true"></i>
+          </div>
+
+          <div class="security-submenu" id="security-submenu" aria-hidden="true">
+            <div class="subnav-line" aria-hidden="true"></div>
+            <div class="subitem sub-security" role="button" tabindex="0" data-view-target="dashboard">Security insights</div>
+            <div class="subitem sub-waf" role="button" tabindex="0" data-view-target="dashboard">WAF</div>
+            <div class="subitem sub-investigate" role="button" tabindex="0" data-view-target="dashboard">Investigate</div>
+            <div class="subitem sub-infrastructure" role="button" tabindex="0" data-view-target="dashboard">Infrastructure</div>
+            <div class="subitem sub-turnstile is-active" role="button" tabindex="0" data-view-target="dashboard" aria-current="page">Turnstile</div>
+          </div>
+
+          <div class="nav-row nav-zero" role="button" tabindex="0" data-view-target="dashboard">
+            <svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M4.2 4.8c2.4 0 4.2-.8 5.8-2.2 1.6 1.4 3.4 2.2 5.8 2.2v4.4c0 3.4-2.1 6.1-5.8 7.9-3.7-1.8-5.8-4.5-5.8-7.9z"></path>
+              <path d="m7.4 9.8 1.8 1.8 3.5-4"></path>
+            </svg>
+            <span>Zero Trust</span>
+          </div>
+
+          <div class="nav-row nav-networking" role="button" tabindex="0" data-view-target="dashboard">
+            <svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <circle cx="5" cy="5" r="2"></circle>
+              <circle cx="15" cy="5" r="2"></circle>
+              <circle cx="5" cy="15" r="2"></circle>
+              <circle cx="15" cy="15" r="2"></circle>
+              <path d="M7 5h6M5 7v6M7 15h6M15 7v6"></path>
+            </svg>
+            <span>Networking</span>
+          </div>
+
+          <div class="nav-row nav-delivery" role="button" tabindex="0" data-view-target="dashboard">
+            <svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M11.3 2.6 5.3 11h4l-1 6.4 6.4-9.1h-4z"></path>
+            </svg>
+            <span>Delivery &amp; performance</span>
+          </div>
+
+          <div class="nav-row nav-login" role="button" tabindex="0" data-view-target="login">
+            <svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M8.2 4.2H5.5a2 2 0 0 0-2 2v7.6a2 2 0 0 0 2 2h2.7"></path>
+              <path d="M10 6.4 13.6 10 10 13.6M13.2 10H5.8"></path>
+              <path d="M12.8 4.2h1.7a2 2 0 0 1 2 2v7.6a2 2 0 0 1-2 2h-1.7"></path>
+            </svg>
+            <span>Login page</span>
+          </div>
+
+          <div class="nav-row nav-components" role="button" tabindex="0" data-view-target="components">
+            <svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <rect x="3.2" y="3.2" width="5.4" height="5.4" rx="1"></rect>
+              <rect x="11.4" y="3.2" width="5.4" height="5.4" rx="1"></rect>
+              <rect x="3.2" y="11.4" width="5.4" height="5.4" rx="1"></rect>
+              <rect x="11.4" y="11.4" width="5.4" height="5.4" rx="1"></rect>
+            </svg>
+            <span>Components</span>
+          </div>
+        </div>
+
+        <footer class="ds-side-footer sidebar-account-footer" aria-label="Signed-in account">
+          <button class="ds-side-account" type="button" aria-label="Manage account for Erinski Easy">
+            <span class="ds-side-account__avatar" aria-hidden="true">EE</span>
+            <span class="ds-side-account__identity">
+              <span class="ds-side-account__name">Erinski Easy</span>
+              <span class="ds-side-account__email">erinski.easy@intellibus...</span>
+            </span>
+            <span class="ds-side-account__role ds-pill">Admin</span>
+          </button>
+        </footer>
+      </aside>
+
+      <button class="sidebar-toggle" type="button" aria-label="Collapse sidebar" aria-expanded="true" aria-controls="primary-sidebar">
+        <i aria-hidden="true"></i>
+      </button>
+
+      <header class="topbar" aria-label="Header actions">
+        <div class="top-actions">
+          <button class="top-action" type="button">
+            <svg class="top-icon sparkle" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M10 1.8 11.8 7 17 8.8 11.8 10.6 10 15.8 8.2 10.6 3 8.8 8.2 7z"></path>
+              <path d="M15.5 2.5v3M14 4h3M4.5 13.5v3M3 15h3"></path>
+            </svg>
+            <span>Ask AI</span>
+          </button>
+          <button class="top-action" type="button">
+            <svg class="top-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <circle cx="10" cy="10" r="6.3"></circle>
+              <path d="M8.2 8.1a2.1 2.1 0 1 1 3.2 1.8c-.8.5-1.3 1-1.3 2v.3M10 15h.1"></path>
+            </svg>
+            <span>Support</span>
+          </button>
+          <button class="top-action top-action--icon" type="button" aria-label="Account">
+            <svg class="user-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <circle cx="10" cy="6.3" r="3.4"></circle>
+              <path d="M3.4 17c.8-3.6 3-5.4 6.6-5.4s5.8 1.8 6.6 5.4z"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="content" aria-label="Turnstile widgets" data-ds-scrollbar data-active-view="dashboard">
+        <section class="content-view dashboard-view is-active" data-view="dashboard" aria-label="Turnstile widgets">
+          <h1>Turnstile widgets</h1>
+          <p class="lede">Turnstile can be embedded into any website without sending traffic through Cloudflare or showing visitors a CAPTCHA</p>
+          <button class="add-button">Add widget manually</button>
+
+          <div class="filter search-filter">
+            <svg class="search-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <circle cx="8.6" cy="8.6" r="6"></circle>
+              <path d="m13.1 13.1 4.2 4.2"></path>
+            </svg>
+            <span>Search</span>
+          </div>
+
+          <div class="filter select-filter filter-host" data-select-menu>
+            <button class="select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="host-filter-menu">
+              <span class="select-value">All hostnames</span>
+              <i class="select-arrows" aria-hidden="true"></i>
+            </button>
+            <div class="select-popover" id="host-filter-menu" role="listbox" data-ds-scrollbar hidden>
+              <button class="select-option" type="button" role="option" aria-selected="true">All hostnames</button>
+              <button class="select-option" type="button" role="option">atlasresume.com</button>
+              <button class="select-option" type="button" role="option">resume.atlas.test</button>
+              <button class="select-option" type="button" role="option">Unassigned hostnames</button>
+            </div>
+          </div>
+          <div class="filter select-filter filter-mode" data-select-menu>
+            <button class="select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="mode-filter-menu">
+              <span class="select-value">All widget modes</span>
+              <i class="select-arrows" aria-hidden="true"></i>
+            </button>
+            <div class="select-popover" id="mode-filter-menu" role="listbox" data-ds-scrollbar hidden>
+              <button class="select-option" type="button" role="option" aria-selected="true">All widget modes</button>
+              <button class="select-option" type="button" role="option">Managed</button>
+              <button class="select-option" type="button" role="option">Non-interactive</button>
+              <button class="select-option" type="button" role="option">Invisible</button>
+            </div>
+          </div>
+          <div class="filter select-filter filter-clearance" data-select-menu>
+            <button class="select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="clearance-filter-menu">
+              <span class="select-value">All pre-clearance levels</span>
+              <i class="select-arrows" aria-hidden="true"></i>
+            </button>
+            <div class="select-popover" id="clearance-filter-menu" role="listbox" data-ds-scrollbar hidden>
+              <button class="select-option" type="button" role="option" aria-selected="true">All pre-clearance levels</button>
+              <button class="select-option" type="button" role="option">No pre-clearance</button>
+              <button class="select-option" type="button" role="option">Interactive pre-clearance</button>
+              <button class="select-option" type="button" role="option">Managed pre-clearance</button>
+            </div>
+          </div>
+
+          <section class="upload-card ds-upload" aria-labelledby="upload-title" data-ds-upload data-ds-upload-demo data-upload-state="idle">
+            <h2 class="ds-upload__title" id="upload-title">Upload your resume</h2>
+            <p class="ds-upload__description">Please upload your most recent CV in PDF format to complete your application.</p>
+            <button class="ds-upload__dropzone" type="button" aria-label="Choose resume file" data-ds-upload-dropzone>
+              <span class="ds-upload__browse">Browse Files</span>
+              <span class="ds-upload__prompt">Click to upload <span>or drag and drop</span></span>
+              <span class="ds-upload__help">PDF or DOCX (max. 5MB)</span>
+            </button>
+            <input class="ds-upload__input" type="file" accept=".pdf,.doc,.docx" data-ds-upload-input>
+            <div class="ds-upload__file-panel" aria-live="polite">
+              <div class="ds-upload__file-row">
+                <span class="ds-upload__file-icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20">
+                    <path d="M5.5 3.5h6l3 3v10h-9z"></path>
+                    <path d="M11.5 3.5v3h3"></path>
+                    <path d="M8 10h4M8 13h4"></path>
+                  </svg>
+                </span>
+                <span class="ds-upload__file-copy">
+                  <strong class="ds-upload__file-name" data-ds-upload-name>No file selected</strong>
+                  <small class="ds-upload__file-size" data-ds-upload-size>0 MB</small>
+                  <span class="ds-upload__progress" aria-hidden="true"><span data-ds-upload-progress></span></span>
+                </span>
+                <button class="ds-upload__remove" type="button" aria-label="Remove selected file" data-ds-upload-remove>
+                  <svg viewBox="0 0 20 20" aria-hidden="true">
+                    <path d="m6 6 8 8M14 6l-8 8"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="ds-upload__actions">
+                <button class="ds-upload__cancel" type="button" data-ds-upload-cancel>Cancel</button>
+                <button class="ds-upload__submit" type="button" data-ds-upload-submit>Submit Resume</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="table-card" aria-label="Widget table">
+            <div class="table-header">
+              <div class="cell widget-name">Widget Name</div>
+              <div class="cell host-count">Number of hostnames</div>
+              <div class="cell likely"><span>Likely human</span></div>
+              <div class="cell mode">Widget Mode</div>
+              <div class="cell clearance">Pre-Clearance</div>
+            </div>
+            <div class="table-row">
+              <div class="cell widget-name">
+                <strong>Atlas Resume</strong>
+                <small>0x4AAAAAADyOPrjvusqiy...</small>
+              </div>
+              <div class="cell host-count">1</div>
+              <div class="cell likely"><strong>84.91%</strong></div>
+              <div class="cell mode">Managed</div>
+              <div class="cell clearance">
+                <span class="status-pill">
+                  <span class="status-pill-icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16">
+                      <path d="M4.5 8h7"></path>
+                    </svg>
+                  </span>
+                  <span>No pre-clearance</span>
+                </span>
+              </div>
+              <div class="table-actions">
+                <button class="menu-dots" type="button" aria-label="Open widget actions" aria-haspopup="menu" aria-expanded="false" aria-controls="widget-actions-menu">...</button>
+                <div class="widget-actions-menu" id="widget-actions-menu" role="menu" aria-label="Widget actions" data-ds-scrollbar hidden>
+                  <button class="widget-action-item" type="button" role="menuitem">View analytics</button>
+                  <button class="widget-action-item" type="button" role="menuitem">Edit Widget</button>
+                  <button class="widget-action-item danger" type="button" role="menuitem">Delete</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="showing">Showing 1-1 of 1</div>
+
+          <div class="pager" aria-label="Pagination">
+            <button class="page-btn first" aria-label="First page">
+              <i></i><i></i>
+            </button>
+            <button class="page-btn prev" aria-label="Previous page">
+              <i></i>
+            </button>
+            <button class="page-current" aria-current="page">1</button>
+            <button class="page-btn next" aria-label="Next page">
+              <i></i>
+            </button>
+            <button class="page-btn last" aria-label="Last page">
+              <i></i><i></i>
+            </button>
+          </div>
+        </section>
+
+        <section class="content-view ds-jobs-view" data-view="jobs" aria-label="Jobs" aria-hidden="true">
+          <div class="ds-jobs" data-jobs>
+            <section class="ds-jobs__browse is-visible" data-jobs-browse aria-labelledby="jobs-page-title">
+              <header class="ds-jobs__page-header">
+                <h1 class="ds-jobs__heading" id="jobs-page-title">Jobs</h1>
+                <p class="ds-jobs__lede">Explore open roles and apply with your resume when you find the right fit.</p>
+              </header>
+
+              <div class="ds-jobs__list" aria-label="Open job listings">
+                <article class="ds-job" data-job>
+                  <div class="ds-job__row">
+                    <button class="ds-job__summary" type="button" aria-expanded="false" aria-controls="job-details-platform" data-job-toggle>
+                      <span class="ds-job__primary">
+                        <strong class="ds-job__title">Senior Backend Engineer</strong>
+                        <span class="ds-job__team">Atlas Resumes · Platform Engineering</span>
+                      </span>
+                      <span class="ds-job__summary-copy">Build the secure services that power resume intake, processing, and intelligent retrieval.</span>
+                      <span class="ds-job__chevron" aria-hidden="true"></span>
+                    </button>
+                    <button class="ds-job__apply-pill ds-pill" type="button" data-job-apply>
+                      <span class="ds-pill__icon" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3"></path></svg></span>
+                      <span>Easy Apply</span>
+                    </button>
+                  </div>
+                  <div class="ds-job__details" id="job-details-platform" aria-hidden="true" inert>
+                    <div class="ds-job__details-inner">
+                      <div class="ds-job__expanded-copy">
+                        <h2>About the role</h2>
+                        <p>Join the platform team building the services behind Atlas Resumes. You will design reliable serverless APIs for job-linked resume intake, document processing, secure storage, and structured search.</p>
+                        <p>You will work closely with product and AI engineers to improve ingestion quality, protect candidate data, and keep production workflows observable and dependable as usage grows.</p>
+                        <h2>What you’ll bring</h2>
+                        <ul>
+                          <li>Strong experience designing production APIs and data workflows.</li>
+                          <li>Comfort working with TypeScript, PostgreSQL, and serverless infrastructure.</li>
+                          <li>A thoughtful approach to security, privacy, and operational reliability.</li>
+                        </ul>
+                      </div>
+                      <dl class="ds-job__meta-grid">
+                        <div><dt>Location</dt><dd>Remote</dd></div>
+                        <div><dt>Employment</dt><dd>Full-time</dd></div>
+                        <div><dt>Team</dt><dd>Platform Engineering</dd></div>
+                        <div><dt>Experience</dt><dd>Senior level</dd></div>
+                      </dl>
+                      <div class="ds-job__details-action">
+                        <button class="ds-job__apply-pill ds-pill" type="button" data-job-apply>
+                          <span class="ds-pill__icon" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3"></path></svg></span>
+                          <span>Easy Apply</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="ds-job" data-job>
+                  <div class="ds-job__row">
+                    <button class="ds-job__summary" type="button" aria-expanded="false" aria-controls="job-details-product" data-job-toggle>
+                      <span class="ds-job__primary">
+                        <strong class="ds-job__title">Product Designer</strong>
+                        <span class="ds-job__team">Atlas Resumes · Product</span>
+                      </span>
+                      <span class="ds-job__summary-copy">Shape clear, trusted workflows for recruiters, candidates, and hiring teams.</span>
+                      <span class="ds-job__chevron" aria-hidden="true"></span>
+                    </button>
+                    <button class="ds-job__apply-pill ds-pill" type="button" data-job-apply>
+                      <span class="ds-pill__icon" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3"></path></svg></span>
+                      <span>Easy Apply</span>
+                    </button>
+                  </div>
+                  <div class="ds-job__details" id="job-details-product" aria-hidden="true" inert>
+                    <div class="ds-job__details-inner">
+                      <div class="ds-job__expanded-copy">
+                        <h2>About the role</h2>
+                        <p>Design thoughtful product experiences across resume intake, candidate review, search, and administration. You will turn complex AI-assisted workflows into calm, understandable interfaces grounded in the Aligned Design System.</p>
+                        <p>You will partner with product and engineering from early exploration through production polish, using research and interaction design to make every stage of the hiring workflow explicit.</p>
+                        <h2>What you’ll bring</h2>
+                        <ul>
+                          <li>A portfolio showing strong product thinking and interaction design craft.</li>
+                          <li>Experience designing data-rich tools without overwhelming the user.</li>
+                          <li>Comfort contributing patterns and guidance to an evolving design system.</li>
+                        </ul>
+                      </div>
+                      <dl class="ds-job__meta-grid">
+                        <div><dt>Location</dt><dd>Hybrid</dd></div>
+                        <div><dt>Employment</dt><dd>Full-time</dd></div>
+                        <div><dt>Team</dt><dd>Product</dd></div>
+                        <div><dt>Experience</dt><dd>Mid–senior level</dd></div>
+                      </dl>
+                      <div class="ds-job__details-action">
+                        <button class="ds-job__apply-pill ds-pill" type="button" data-job-apply>
+                          <span class="ds-pill__icon" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3"></path></svg></span>
+                          <span>Easy Apply</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="ds-job" data-job>
+                  <div class="ds-job__row">
+                    <button class="ds-job__summary" type="button" aria-expanded="false" aria-controls="job-details-ai" data-job-toggle>
+                      <span class="ds-job__primary">
+                        <strong class="ds-job__title">AI Implementation Specialist</strong>
+                        <span class="ds-job__team">Atlas Resumes · Client Solutions</span>
+                      </span>
+                      <span class="ds-job__summary-copy">Help hiring teams configure dependable AI-assisted intake and search workflows.</span>
+                      <span class="ds-job__chevron" aria-hidden="true"></span>
+                    </button>
+                    <button class="ds-job__apply-pill ds-pill" type="button" data-job-apply>
+                      <span class="ds-pill__icon" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3"></path></svg></span>
+                      <span>Easy Apply</span>
+                    </button>
+                  </div>
+                  <div class="ds-job__details" id="job-details-ai" aria-hidden="true" inert>
+                    <div class="ds-job__details-inner">
+                      <div class="ds-job__expanded-copy">
+                        <h2>About the role</h2>
+                        <p>Guide customers from their existing hiring process into a practical Atlas Resumes workflow. You will configure intake, extraction, review, and search experiences while helping teams understand where AI adds value and where human judgment remains essential.</p>
+                        <p>You will translate operational needs into clear implementation plans, validate production outcomes, and bring recurring customer insights back to product and engineering.</p>
+                        <h2>What you’ll bring</h2>
+                        <ul>
+                          <li>Experience implementing workflow, data, or AI-enabled products.</li>
+                          <li>Strong customer communication and technical problem-solving skills.</li>
+                          <li>An ability to explain complex systems in direct, practical language.</li>
+                        </ul>
+                      </div>
+                      <dl class="ds-job__meta-grid">
+                        <div><dt>Location</dt><dd>Remote</dd></div>
+                        <div><dt>Employment</dt><dd>Full-time</dd></div>
+                        <div><dt>Team</dt><dd>Client Solutions</dd></div>
+                        <div><dt>Travel</dt><dd>Occasional</dd></div>
+                      </dl>
+                      <div class="ds-job__details-action">
+                        <button class="ds-job__apply-pill ds-pill" type="button" data-job-apply>
+                          <span class="ds-pill__icon" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3"></path></svg></span>
+                          <span>Easy Apply</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="ds-job" data-job>
+                  <div class="ds-job__row">
+                    <button class="ds-job__summary" type="button" aria-expanded="false" aria-controls="job-details-success" data-job-toggle>
+                      <span class="ds-job__primary">
+                        <strong class="ds-job__title">Customer Success Manager</strong>
+                        <span class="ds-job__team">Atlas Resumes · Customer Experience</span>
+                      </span>
+                      <span class="ds-job__summary-copy">Help customers adopt better resume workflows and get measurable value from Atlas.</span>
+                      <span class="ds-job__chevron" aria-hidden="true"></span>
+                    </button>
+                    <button class="ds-job__apply-pill ds-pill" type="button" data-job-apply>
+                      <span class="ds-pill__icon" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3"></path></svg></span>
+                      <span>Easy Apply</span>
+                    </button>
+                  </div>
+                  <div class="ds-job__details" id="job-details-success" aria-hidden="true" inert>
+                    <div class="ds-job__details-inner">
+                      <div class="ds-job__expanded-copy">
+                        <h2>About the role</h2>
+                        <p>Own trusted relationships with hiring teams using Atlas Resumes. You will guide onboarding, identify adoption opportunities, coordinate issue resolution, and help customers turn the product into a reliable part of their day-to-day recruiting operation.</p>
+                        <p>You will combine structured account planning with a genuine curiosity about each customer’s process, goals, and constraints.</p>
+                        <h2>What you’ll bring</h2>
+                        <ul>
+                          <li>Experience supporting or growing B2B software customers.</li>
+                          <li>Strong organization, follow-through, and relationship-building skills.</li>
+                          <li>Comfort using product data to guide customer conversations.</li>
+                        </ul>
+                      </div>
+                      <dl class="ds-job__meta-grid">
+                        <div><dt>Location</dt><dd>Hybrid</dd></div>
+                        <div><dt>Employment</dt><dd>Full-time</dd></div>
+                        <div><dt>Team</dt><dd>Customer Experience</dd></div>
+                        <div><dt>Experience</dt><dd>Mid-level</dd></div>
+                      </dl>
+                      <div class="ds-job__details-action">
+                        <button class="ds-job__apply-pill ds-pill" type="button" data-job-apply>
+                          <span class="ds-pill__icon" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3"></path></svg></span>
+                          <span>Easy Apply</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="ds-jobs__application" data-jobs-application aria-labelledby="application-job-title" aria-hidden="true" hidden>
+              <button class="ds-jobs__back ds-button" type="button" data-jobs-back>
+                <svg class="ds-button__icon" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="m12.5 4.5-5.5 5.5 5.5 5.5M7.5 10h8"></path>
+                </svg>
+                Back to jobs
+              </button>
+
+              <header class="ds-jobs__application-header">
+                <span class="ds-jobs__eyebrow">Easy Apply</span>
+                <h1 class="ds-jobs__heading" id="application-job-title" data-application-title>Selected job</h1>
+                <p class="ds-jobs__lede" data-application-team></p>
+              </header>
+
+              <div class="ds-jobs__application-grid">
+                <article class="ds-jobs__selected-job" aria-label="Selected job details">
+                  <div class="ds-jobs__selected-description" data-application-description></div>
+                  <dl class="ds-job__meta-grid" data-application-meta></dl>
+                </article>
+
+                <aside class="ds-jobs__upload-column" aria-label="Resume upload">
+                  <section class="ds-upload ds-jobs__upload" aria-labelledby="jobs-upload-title" data-ds-upload data-upload-state="idle" data-submit-label="Submit application">
+                    <h2 class="ds-upload__title" id="jobs-upload-title">Upload your resume</h2>
+                    <p class="ds-upload__description" data-application-upload-copy>Upload a PDF or DOCX resume to apply for this role.</p>
+                    <button class="ds-upload__dropzone" type="button" aria-label="Choose resume file" data-ds-upload-dropzone>
+                      <span class="ds-upload__browse">Browse Files</span>
+                      <span class="ds-upload__prompt">Click to upload <span>or drag and drop</span></span>
+                      <span class="ds-upload__help">PDF or DOCX (max. 5MB)</span>
+                    </button>
+                    <input class="ds-upload__input" type="file" accept=".pdf,.doc,.docx" data-ds-upload-input>
+                    <div class="ds-upload__file-panel" aria-live="polite">
+                      <div class="ds-upload__file-row">
+                        <span class="ds-upload__file-icon" aria-hidden="true">
+                          <svg viewBox="0 0 20 20">
+                            <path d="M5.5 3.5h6l3 3v10h-9z"></path>
+                            <path d="M11.5 3.5v3h3"></path>
+                            <path d="M8 10h4M8 13h4"></path>
+                          </svg>
+                        </span>
+                        <span class="ds-upload__file-copy">
+                          <strong class="ds-upload__file-name" data-ds-upload-name>No file selected</strong>
+                          <small class="ds-upload__file-size" data-ds-upload-size>0 MB</small>
+                          <span class="ds-upload__progress" aria-hidden="true"><span data-ds-upload-progress></span></span>
+                        </span>
+                        <button class="ds-upload__remove" type="button" aria-label="Remove selected file" data-ds-upload-remove>
+                          <svg viewBox="0 0 20 20" aria-hidden="true">
+                            <path d="m6 6 8 8M14 6l-8 8"></path>
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="ds-upload__actions">
+                        <button class="ds-upload__cancel" type="button" data-ds-upload-cancel>Cancel</button>
+                        <button class="ds-upload__submit" type="button" data-ds-upload-submit>Submit application</button>
+                      </div>
+                    </div>
+                  </section>
+                  <p class="ds-jobs__privacy-note">Your resume is used only for this application and its related hiring review.</p>
+                </aside>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="content-view ds-components-page" data-view="components" aria-label="Components" aria-hidden="true">
+          <header class="ds-components-page__header">
+            <h1>Components</h1>
+            <p>Canonical specimens for every component protected by the Aligned component contract suite.</p>
+          </header>
+
+          <div class="ds-components-grid">
+            <article class="ds-component-card" data-contract-example="buttons">
+              <h2 class="ds-component-card__label">Buttons</h2>
+              <div class="ds-component-specimen ds-component-specimen--centered">
+                <button class="ds-button" type="button">Neutral action</button>
+                <button class="ds-button ds-button--primary" type="button">Primary action</button>
+              </div>
+            </article>
+
+            <article class="ds-component-card" data-contract-example="pill">
+              <h2 class="ds-component-card__label">Pill</h2>
+              <div class="ds-component-specimen ds-component-specimen--centered">
+                <span class="ds-pill">
+                  <span class="ds-pill__icon" aria-hidden="true">
+                    <svg viewBox="0 0 12 12"><path d="M3 6h6"></path></svg>
+                  </span>
+                  <span>Active</span>
+                </span>
+              </div>
+            </article>
+
+            <article class="ds-component-card" data-contract-example="pill-button">
+              <h2 class="ds-component-card__label">Pill Button</h2>
+              <div class="ds-component-specimen ds-component-specimen--centered">
+                <div class="ds-component-specimen--pill-button">
+                  <button class="ds-pill-button" type="button">
+                    <span class="ds-pill-button__icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20"><path d="M8 4.5H5.5A1.5 1.5 0 0 0 4 6v8a1.5 1.5 0 0 0 1.5 1.5H8"></path><path d="M12 6.5 15.5 10 12 13.5M15 10H8"></path></svg>
+                    </span>
+                    <span>Continue with account</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="ds-component-card" data-contract-example="icon-list">
+              <h2 class="ds-component-card__label">Icon List</h2>
+              <div class="ds-component-specimen">
+                <ul class="ds-icon-list">
+                  <li>
+                    <a class="ds-icon-list-row is-active" href="#components-list-one">
+                      <svg class="ds-icon-list-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="6.5"></circle></svg>
+                      <span class="ds-icon-list-label">Overview</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="ds-icon-list-row" href="#components-list-two">
+                      <svg class="ds-icon-list-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 5h12M4 10h12M4 15h12"></path></svg>
+                      <span class="ds-icon-list-label">Activity</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="ds-component-card" data-contract-example="bar">
+              <h2 class="ds-component-card__label">Bar</h2>
+              <div class="ds-component-specimen ds-component-specimen--centered">
+                <nav class="ds-bar" aria-label="Component bar example">
+                  <div class="ds-bar__group">
+                    <a class="ds-bar__item" href="#components-support">
+                      <svg class="ds-bar__icon ds-bar__icon--outline" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="6.5"></circle><path d="M8.4 8.2a2 2 0 1 1 3.1 1.7c-.8.5-1.3 1-1.3 1.9"></path></svg>
+                      <span>Support</span>
+                    </a>
+                    <span class="ds-bar__separator" aria-hidden="true"></span>
+                    <a class="ds-bar__item" href="#components-status">Status</a>
+                  </div>
+                </nav>
+              </div>
+            </article>
+
+            <article class="ds-component-card" data-contract-example="select-menu">
+              <h2 class="ds-component-card__label">Select Menu</h2>
+              <div class="ds-component-specimen ds-component-specimen--select">
+                <div class="ds-select-menu" data-ds-select-menu>
+                  <button class="ds-select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="components-select-menu">
+                    <span class="ds-select-value">All environments</span>
+                    <i class="ds-select-chevron" aria-hidden="true"></i>
+                  </button>
+                  <div class="ds-select-popover" id="components-select-menu" role="listbox" hidden>
+                    <button class="ds-select-option" type="button" role="option" aria-selected="true">All environments</button>
+                    <button class="ds-select-option" type="button" role="option" aria-selected="false">Production</button>
+                    <button class="ds-select-option" type="button" role="option" aria-selected="false">Preview</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="ds-component-card" data-contract-example="context-menu">
+              <h2 class="ds-component-card__label">Context Menu</h2>
+              <div class="ds-component-specimen ds-component-specimen--context">
+                <button class="ds-context-trigger" type="button" aria-label="Component actions" aria-haspopup="menu" aria-expanded="true">•••</button>
+                <div class="ds-context-menu is-open" role="menu" aria-label="Component actions">
+                  <button class="ds-context-menu__item" type="button" role="menuitem">View details</button>
+                  <button class="ds-context-menu__item" type="button" role="menuitem">Duplicate</button>
+                  <button class="ds-context-menu__item ds-context-menu__item--danger" type="button" role="menuitem">Delete</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="ds-component-card" data-contract-example="table">
+              <h2 class="ds-component-card__label">Table</h2>
+              <div class="ds-component-specimen">
+                <div class="ds-table">
+                  <table class="ds-table__element">
+                    <thead class="ds-table__head">
+                      <tr class="ds-table__row">
+                        <th class="ds-table__cell" scope="col">Name</th>
+                        <th class="ds-table__cell" scope="col">Status</th>
+                        <th class="ds-table__cell" scope="col">Owner</th>
+                      </tr>
+                    </thead>
+                    <tbody class="ds-table__body">
+                      <tr class="ds-table__row">
+                        <td class="ds-table__cell ds-table__cell--primary">Resume intake</td>
+                        <td class="ds-table__cell"><span class="ds-pill">Active</span></td>
+                        <td class="ds-table__cell">Platform</td>
+                      </tr>
+                      <tr class="ds-table__row">
+                        <td class="ds-table__cell ds-table__cell--primary">Candidate search</td>
+                        <td class="ds-table__cell"><span class="ds-pill">Review</span></td>
+                        <td class="ds-table__cell">Product</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </article>
+
+            <article class="ds-component-card" data-contract-example="upload">
+              <h2 class="ds-component-card__label">Upload</h2>
+              <div class="ds-component-specimen ds-component-specimen--upload">
+                <section class="ds-upload" aria-labelledby="components-upload-title" data-ds-upload data-ds-upload-demo data-upload-state="idle">
+                  <h3 class="ds-upload__title" id="components-upload-title">Upload your resume</h3>
+                  <p class="ds-upload__description">Upload a PDF or DOCX file to continue.</p>
+                  <button class="ds-upload__dropzone" type="button" aria-label="Choose resume file" data-ds-upload-dropzone>
+                    <span class="ds-upload__browse">Browse Files</span>
+                    <span class="ds-upload__prompt">Click to upload <span>or drag and drop</span></span>
+                    <span class="ds-upload__help">PDF or DOCX (max. 5MB)</span>
+                  </button>
+                  <input class="ds-upload__input" type="file" accept=".pdf,.doc,.docx" data-ds-upload-input>
+                  <div class="ds-upload__file-panel" aria-live="polite">
+                    <div class="ds-upload__file-row">
+                      <span class="ds-upload__file-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5.5 3.5h6l3 3v10h-9z"></path><path d="M11.5 3.5v3h3"></path></svg></span>
+                      <span class="ds-upload__file-copy">
+                        <strong class="ds-upload__file-name" data-ds-upload-name>No file selected</strong>
+                        <small class="ds-upload__file-size" data-ds-upload-size>0 MB</small>
+                        <span class="ds-upload__progress" aria-hidden="true"><span data-ds-upload-progress></span></span>
+                      </span>
+                      <button class="ds-upload__remove" type="button" aria-label="Remove selected file" data-ds-upload-remove><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 6 8 8M14 6l-8 8"></path></svg></button>
+                    </div>
+                    <div class="ds-upload__actions">
+                      <button class="ds-upload__cancel" type="button" data-ds-upload-cancel>Cancel</button>
+                      <button class="ds-upload__submit" type="button" data-ds-upload-submit>Submit</button>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </article>
+
+            <article class="ds-component-card" data-contract-example="login">
+              <h2 class="ds-component-card__label">Login</h2>
+              <div class="ds-component-specimen ds-component-specimen--login">
+                <section class="ds-login" aria-labelledby="components-login-title">
+                  <div class="ds-login__brand-row" aria-hidden="true">
+                    <div class="ds-login__provider-icon ds-login__provider-icon--google"><img src="assets/google-g.svg" alt=""></div>
+                    <div class="ds-login__connector"><span></span><span></span><span></span></div>
+                    <div class="ds-login__provider-icon"><img class="ds-site-icon ds-site-icon--auth" src="assets/site-icon.svg" alt=""></div>
+                  </div>
+                  <h3 class="ds-login__title" id="components-login-title">Continue to Aligned</h3>
+                  <p class="ds-login__copy">Choose an account to sign in with Google</p>
+                  <div class="ds-login__account-wrap">
+                    <button class="ds-login__account" type="button">
+                      <span class="ds-login__avatar" aria-hidden="true">E</span>
+                      <span class="ds-login__account-copy"><strong>Erinski Easy</strong><small>erinski@example.com</small></span>
+                    </button>
+                    <button class="ds-login__clear" type="button" aria-label="Forget erinski@example.com"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 6 8 8M14 6l-8 8"></path></svg></button>
+                  </div>
+                  <div class="ds-login__divider" aria-hidden="true"><span></span><strong>OR</strong><span></span></div>
+                  <div class="ds-login__actions">
+                    <button class="ds-pill-button" type="button"><span class="ds-pill-button__icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M8 4.5H5.5A1.5 1.5 0 0 0 4 6v8a1.5 1.5 0 0 0 1.5 1.5H8"></path><path d="M12 6.5 15.5 10 12 13.5M15 10H8"></path></svg></span><span>Another account</span></button>
+                  </div>
+                </section>
+              </div>
+            </article>
+
+            <article class="ds-component-card" data-contract-example="side-menu">
+              <h2 class="ds-component-card__label">Side Menu</h2>
+              <div class="ds-component-specimen ds-component-specimen--side-menu">
+                <aside class="ds-side-panel" data-ds-side-menu aria-label="Component navigation specimen">
+                  <header class="ds-side-header">
+                    <img class="ds-side-brand-mark ds-site-icon ds-site-icon--topbar" src="assets/site-icon.svg" alt="">
+                    <div class="ds-side-brand-name">account@example.com</div>
+                  </header>
+                  <nav class="ds-side-nav" aria-label="Component sections">
+                    <div class="ds-side-section-label">Build</div>
+                    <a class="ds-side-item is-active" href="#components-compute">
+                      <svg class="ds-side-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.2 3.6 10 10l-4.8 6.4M10.2 3.6 15 10l-4.8 6.4"></path></svg>
+                      <span class="ds-side-item-label">Compute</span>
+                    </a>
+                    <button class="ds-side-item" type="button" data-ds-side-toggle aria-expanded="true" aria-controls="components-side-submenu">
+                      <svg class="ds-side-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.7 15.3 5v4.1c0 3.5-2 6.7-5.3 8.2-3.3-1.5-5.3-4.7-5.3-8.2V5z"></path></svg>
+                      <span class="ds-side-item-label">Security</span>
+                      <i class="ds-side-chevron" aria-hidden="true"></i>
+                    </button>
+                    <div class="ds-side-submenu" id="components-side-submenu">
+                      <a class="ds-side-subitem" href="#components-waf"><span class="ds-side-subitem-label">WAF</span></a>
+                      <a class="ds-side-subitem" href="#components-insights"><span class="ds-side-subitem-label">Insights</span></a>
+                    </div>
+                  </nav>
+                  <footer class="ds-side-footer">
+                    <button class="ds-side-account" type="button" aria-label="Manage account for Erinski Easy">
+                      <span class="ds-side-account__avatar" aria-hidden="true">EE</span>
+                      <span class="ds-side-account__identity"><span class="ds-side-account__name">Erinski Easy</span><span class="ds-side-account__email">erinski@example.com</span></span>
+                      <span class="ds-side-account__role ds-pill">Admin</span>
+                    </button>
+                  </footer>
+                </aside>
+              </div>
+            </article>
+
+            <article class="ds-component-card" data-contract-example="modal">
+              <h2 class="ds-component-card__label">Modal</h2>
+              <div class="ds-component-specimen ds-component-specimen--modal">
+                <button class="ds-button" type="button" data-ds-modal-trigger="#components-modal">Open modal preview</button>
+                <div class="ds-modal-overlay" id="components-modal" data-ds-modal hidden>
+                  <section class="ds-modal" role="dialog" aria-modal="true" aria-label="Component modal preview">
+                    <header class="ds-modal__header">
+                      <div class="ds-command-search">
+                        <svg class="ds-command-search__icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor"></circle><path d="M12.8 12.8 17 17" fill="none" stroke="currentColor"></path></svg>
+                        <input class="ds-command-search__input" aria-label="Search components" placeholder="Search components...">
+                        <kbd class="ds-kbd">Esc</kbd>
+                      </div>
+                    </header>
+                    <div class="ds-modal__body">
+                      <div class="ds-command-heading">Components</div>
+                      <button class="ds-command-row" type="button"><svg class="ds-command-row__icon" viewBox="0 0 20 20" aria-hidden="true"></svg><strong class="ds-command-row__prefix">open:</strong><span class="ds-command-row__dash" aria-hidden="true"></span><span class="ds-command-row__description">Open component documentation</span></button>
+                    </div>
+                    <footer class="ds-modal__footer"><button class="ds-button" type="button" data-ds-modal-close>Close</button></footer>
+                  </section>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-view ds-login-page" data-view="login" aria-label="Login page" aria-hidden="true">
+          <div class="ds-login">
+            <div class="ds-login__brand-row" aria-hidden="true">
+              <div class="ds-login__provider-icon ds-login__provider-icon--google">
+                <img src="assets/google-g.svg" alt="">
+              </div>
+              <div class="ds-login__connector"><span></span><span></span><span></span></div>
+              <div class="ds-login__provider-icon">
+                <img class="ds-site-icon ds-site-icon--auth" src="assets/site-icon.svg" alt="">
+              </div>
+            </div>
+
+            <h1 class="ds-login__title">Continue to Vector Ingestion Console</h1>
+            <p class="ds-login__copy">Choose an account to sign in with Google</p>
+
+            <button class="ds-login__account" type="button">
+              <span class="ds-login__avatar" aria-hidden="true">E</span>
+              <span class="ds-login__account-copy">
+                <strong>Erinski Easy</strong>
+                <small>erinski@methodbyeasy.com</small>
+              </span>
+              <svg class="ds-login__clear" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="m6 6 8 8M14 6l-8 8"></path>
+              </svg>
+            </button>
+
+            <div class="ds-login__divider" aria-hidden="true">
+              <span></span>
+              <strong>OR</strong>
+              <span></span>
+            </div>
+
+            <div class="ds-login__actions">
+              <button class="ds-pill-button" type="button">
+                <span class="ds-pill-button__icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20">
+                    <path d="M8 4.5H5.5A1.5 1.5 0 0 0 4 6v8a1.5 1.5 0 0 0 1.5 1.5H8"></path>
+                    <path d="M12 6.5 15.5 10 12 13.5M15 10H8"></path>
+                  </svg>
+                </span>
+                <span>Log in to another account</span>
+              </button>
+              <button class="ds-pill-button" type="button">
+                <span class="ds-pill-button__icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20">
+                    <circle cx="8" cy="7" r="3"></circle>
+                    <path d="M2.75 15.5c.7-2.35 2.45-3.5 5.25-3.5 1.35 0 2.45.27 3.3.82M15 9.5v6M12 12.5h6"></path>
+                  </svg>
+                </span>
+                <span>Create account</span>
+              </button>
+            </div>
+
+            <div class="ds-login__links">
+              <a href="#">Terms of Use</a>
+              <span></span>
+              <a href="#">Privacy Policy</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="#">Support</a>
+          <span></span>
+          <a href="#">System Status</a>
+          <span></span>
+          <a href="#">Careers</a>
+          <span></span>
+          <a href="#">Terms of Use</a>
+          <span></span>
+          <a href="#">Report Security Issues</a>
+          <span></span>
+          <a href="#">Privacy Policy</a>
+          <div class="cookie-mark" aria-hidden="true"><b></b><b></b></div>
+          <a class="cookie" href="#">Cookie Preferences</a>
+          <p>&copy; 2026 Cloudflare, Inc.</p>
+        </nav>
+      </footer>
+
+      <div class="command-overlay" hidden>
+        <section class="command-palette" id="command-palette" role="dialog" aria-modal="true" aria-label="Command search">
+          <div class="command-search-row">
+            <svg class="command-search-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <circle cx="8.6" cy="8.6" r="6"></circle>
+              <path d="m13.1 13.1 4.2 4.2"></path>
+            </svg>
+            <input class="command-input" type="text" placeholder="Search products, pages, and features..." aria-label="Search products, pages, and features">
+            <kbd>Esc</kbd>
+          </div>
+          <div class="command-body" data-ds-scrollbar>
+            <div class="command-heading">Search tips</div>
+            <button class="command-row active" type="button">
+              <svg class="command-icon" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M10 2.5 11.6 7 16 8.5 11.6 10 10 14.5 8.4 10 4 8.5 8.4 7z"></path>
+                <path d="M15.2 2.8v2.6M13.9 4.1h2.6"></path>
+              </svg>
+              <strong>ask:</strong>
+              <span class="command-dash"></span>
+              <span>Ask AI</span>
+              <i aria-hidden="true"></i>
+            </button>
+            <button class="command-row" type="button">
+              <svg class="command-icon" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M4.2 10a5.8 5.8 0 0 1 10.6-3.3M15.8 10A5.8 5.8 0 0 1 5.2 13.3"></path>
+                <path d="M14.8 3.7v3.1h-3.1M5.2 16.3v-3.1h3.1"></path>
+              </svg>
+              <strong>access:</strong>
+              <span class="command-dash"></span>
+              <span>Search Access applications</span>
+            </button>
+            <button class="command-row" type="button">
+              <svg class="command-icon" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M7.5 3.2h5v13.6h-5zM3.3 7.5h4.2M12.5 7.5h4.2M3.3 12.5h4.2M12.5 12.5h4.2"></path>
+              </svg>
+              <strong>aig:</strong>
+              <span class="command-dash"></span>
+              <span>Search AI Gateways</span>
+            </button>
+            <button class="command-row" type="button">
+              <svg class="command-icon" viewBox="0 0 20 20" aria-hidden="true">
+                <rect x="4.2" y="3.5" width="10.5" height="13"></rect>
+                <path d="M7 6.5h5M7 9.3h4M7 12.1h5M14.8 12.2l2.2 2.2"></path>
+              </svg>
+              <strong>ais:</strong>
+              <span class="command-dash"></span>
+              <span>Search AI Search instances</span>
+            </button>
+            <button class="command-row" type="button">
+              <svg class="command-icon" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="m7 4-4 6 4 6M13 4l4 6-4 6M9 15l2-10"></path>
+              </svg>
+              <strong>containers:</strong>
+              <span class="command-dash"></span>
+              <span>Search Container applications</span>
+            </button>
+            <button class="command-row" type="button">
+              <svg class="command-icon" viewBox="0 0 20 20" aria-hidden="true">
+                <ellipse cx="10" cy="5" rx="5.5" ry="2.4"></ellipse>
+                <path d="M4.5 5v5c0 1.3 2.5 2.4 5.5 2.4s5.5-1.1 5.5-2.4V5M4.5 10v5c0 1.3 2.5 2.4 5.5 2.4s5.5-1.1 5.5-2.4v-5"></path>
+              </svg>
+              <strong>d1:</strong>
+              <span class="command-dash"></span>
+              <span>Search D1 databases</span>
+            </button>
+          </div>
+          <div class="command-footer">
+            <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
+            <span><kbd>↵</kbd> to select</span>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="design-system/primitives/floating.behavior.js"></script>
+    <script src="design-system/primitives/select-menu.behavior.js"></script>
+    <script src="design-system/primitives/scrollbar.behavior.js"></script>
+    <script src="design-system/side-menu/side-menu.behavior.js"></script>
+    <script src="design-system/modal/modal.behavior.js"></script>
+    <script src="design-system/upload/upload.behavior.js"></script>
+    <script>
+      const stage = document.querySelector(".stage");
+      const sidebarToggle = document.querySelector(".sidebar-toggle");
+      const securityToggle = document.querySelector(".nav-security");
+      const sidebarMenu = document.querySelector(".sidebar-menu");
+      const securitySubmenu = document.querySelector("#security-submenu");
+      const commandTrigger = document.querySelector(".menu-search-trigger");
+      const commandOverlay = document.querySelector(".command-overlay");
+      const commandInput = document.querySelector(".command-input");
+      const commandRows = document.querySelectorAll(".command-row");
+      const widgetMenuButton = document.querySelector(".menu-dots");
+      const widgetActionsMenu = document.querySelector(".widget-actions-menu");
+      const widgetActionItems = document.querySelectorAll(".widget-action-item");
+      const selectMenus = document.querySelectorAll("[data-select-menu]");
+      const contentSurface = document.querySelector(".content");
+      const contentViews = document.querySelectorAll("[data-view]");
+      const viewTargets = document.querySelectorAll("[data-view-target]");
+      const jobsBrowse = document.querySelector("[data-jobs-browse]");
+      const jobsApplication = document.querySelector("[data-jobs-application]");
+      const jobCards = document.querySelectorAll("[data-job]");
+      const jobsBack = document.querySelector("[data-jobs-back]");
+      const applicationTitle = document.querySelector("[data-application-title]");
+      const applicationTeam = document.querySelector("[data-application-team]");
+      const applicationDescription = document.querySelector("[data-application-description]");
+      const applicationMeta = document.querySelector("[data-application-meta]");
+      const applicationUploadCopy = document.querySelector("[data-application-upload-copy]");
+      const applicationUpload = document.querySelector(".ds-jobs__upload");
+      let commandCloseTimer;
+      let widgetMenuCloseTimer;
+      let jobsTransitionTimer;
+      const selectCloseTimers = new WeakMap();
+
+      function readPixelVar(name, fallback) {
+        const value = window.getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+        const parsed = Number.parseFloat(value);
+
+        return Number.isFinite(parsed) ? parsed : fallback;
+      }
+
+      function placeFloating(trigger, panel, root) {
+        if (!trigger || !panel) return;
+
+        const viewportPadding = 8;
+        const connectedGap = readPixelVar("--connected-gap", 8);
+        const triggerRect = trigger.getBoundingClientRect();
+        const panelRect = panel.getBoundingClientRect();
+        const spaceBelow = window.innerHeight - triggerRect.bottom - viewportPadding;
+        const spaceAbove = triggerRect.top - viewportPadding;
+        const placementY = panelRect.height + connectedGap > spaceBelow && spaceAbove > spaceBelow ? "top" : "bottom";
+        const spaceRight = window.innerWidth - triggerRect.left - viewportPadding;
+        const spaceLeft = triggerRect.right - viewportPadding;
+        const alignX = panelRect.width > spaceRight && spaceLeft >= panelRect.width ? "right" : "left";
+        const availableBlock = Math.max((placementY === "top" ? spaceAbove : spaceBelow) - connectedGap, 96);
+
+        panel.dataset.placementY = placementY;
+        panel.dataset.alignX = alignX;
+        panel.style.maxHeight = `${Math.floor(availableBlock)}px`;
+        panel.style.overflowY = panelRect.height > availableBlock ? "auto" : "";
+        window.AlignedScrollbar?.update(panel);
+
+        if (root) {
+          root.dataset.placementY = placementY;
+          root.dataset.alignX = alignX;
+        }
+      }
+
+      function setSidebarExpanded(isExpanded) {
+        stage.classList.toggle("sidebar-collapsed", !isExpanded);
+        sidebarToggle.setAttribute("aria-expanded", String(isExpanded));
+        sidebarToggle.setAttribute("aria-label", isExpanded ? "Collapse sidebar" : "Expand sidebar");
+      }
+
+      function setSecurityExpanded(isExpanded) {
+        sidebarMenu.classList.toggle("security-collapsed", !isExpanded);
+        securityToggle.setAttribute("aria-expanded", String(isExpanded));
+        securitySubmenu.setAttribute("aria-hidden", String(!isExpanded));
+      }
+
+      function setActiveView(viewName, activeTarget) {
+        const activeView = Array.from(contentViews).find((view) => view.dataset.view === viewName);
+
+        if (!activeView) return;
+
+        const activeNavTarget = activeTarget || Array.from(viewTargets).find((target) => target.dataset.viewTarget === viewName);
+
+        contentViews.forEach((view) => {
+          const isActive = view === activeView;
+          view.classList.toggle("is-active", isActive);
+          view.setAttribute("aria-hidden", String(!isActive));
+        });
+
+        viewTargets.forEach((target) => {
+          const isActive = target === activeNavTarget;
+          target.classList.toggle("is-active", isActive);
+
+          if (isActive) {
+            target.setAttribute("aria-current", "page");
+          } else {
+            target.removeAttribute("aria-current");
+          }
+        });
+
+        contentSurface.dataset.activeView = viewName;
+        contentSurface.setAttribute("aria-label", activeView.getAttribute("aria-label") || "Application page");
+        contentSurface.scrollTop = 0;
+        window.AlignedScrollbar?.update(contentSurface);
+      }
+
+      function setJobExpanded(activeCard, shouldExpand) {
+        jobCards.forEach((card) => {
+          const toggle = card.querySelector("[data-job-toggle]");
+          const details = card.querySelector(".ds-job__details");
+          const isExpanded = card === activeCard && shouldExpand;
+
+          card.classList.toggle("is-expanded", isExpanded);
+          toggle.setAttribute("aria-expanded", String(isExpanded));
+          details.setAttribute("aria-hidden", String(!isExpanded));
+          details.toggleAttribute("inert", !isExpanded);
+        });
+
+        window.setTimeout(() => window.AlignedScrollbar?.update(contentSurface), 280);
+      }
+
+      function showApplication(jobCard) {
+        const title = jobCard.querySelector(".ds-job__title").textContent.trim();
+        const team = jobCard.querySelector(".ds-job__team").textContent.trim();
+
+        applicationTitle.textContent = title;
+        applicationTeam.textContent = team;
+        applicationDescription.innerHTML = jobCard.querySelector(".ds-job__expanded-copy").innerHTML;
+        applicationMeta.innerHTML = jobCard.querySelector(".ds-job__meta-grid").innerHTML;
+        applicationUploadCopy.textContent = `Upload a PDF or DOCX resume to apply for ${title}.`;
+        applicationUpload?.dsUpload?.reset();
+
+        window.clearTimeout(jobsTransitionTimer);
+        jobsBrowse.classList.remove("is-visible");
+        jobsBrowse.setAttribute("aria-hidden", "true");
+
+        jobsTransitionTimer = window.setTimeout(() => {
+          jobsBrowse.hidden = true;
+          jobsApplication.hidden = false;
+          jobsApplication.setAttribute("aria-hidden", "false");
+
+          window.requestAnimationFrame(() => {
+            jobsApplication.classList.add("is-visible");
+            contentSurface.scrollTop = 0;
+            jobsBack.focus({ preventScroll: true });
+            window.AlignedScrollbar?.update(contentSurface);
+          });
+        }, 180);
+      }
+
+      function showJobsBrowse() {
+        window.clearTimeout(jobsTransitionTimer);
+        jobsApplication.classList.remove("is-visible");
+        jobsApplication.setAttribute("aria-hidden", "true");
+
+        jobsTransitionTimer = window.setTimeout(() => {
+          jobsApplication.hidden = true;
+          jobsBrowse.hidden = false;
+          jobsBrowse.setAttribute("aria-hidden", "false");
+
+          window.requestAnimationFrame(() => {
+            jobsBrowse.classList.add("is-visible");
+            contentSurface.scrollTop = 0;
+            document.querySelector("[data-view-target='jobs']")?.focus({ preventScroll: true });
+            window.AlignedScrollbar?.update(contentSurface);
+          });
+        }, 180);
+      }
+
+      jobCards.forEach((card) => {
+        const toggle = card.querySelector("[data-job-toggle]");
+        const applyButtons = card.querySelectorAll("[data-job-apply]");
+
+        toggle.addEventListener("click", () => {
+          setJobExpanded(card, toggle.getAttribute("aria-expanded") !== "true");
+        });
+
+        applyButtons.forEach((button) => {
+          button.addEventListener("click", (event) => {
+            event.stopPropagation();
+            showApplication(card);
+          });
+        });
+      });
+
+      jobsBack.addEventListener("click", showJobsBrowse);
+
+      viewTargets.forEach((target) => {
+        target.addEventListener("click", () => {
+          setActiveView(target.dataset.viewTarget, target);
+        });
+
+        target.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            setActiveView(target.dataset.viewTarget, target);
+          }
+        });
+      });
+
+      function toggleSecurityMenu() {
+        if (stage.classList.contains("sidebar-collapsed")) {
+          setSidebarExpanded(true);
+          setSecurityExpanded(true);
+          return;
+        }
+
+        setSecurityExpanded(securityToggle.getAttribute("aria-expanded") !== "true");
+      }
+
+      securityToggle.addEventListener("click", toggleSecurityMenu);
+      securityToggle.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleSecurityMenu();
+        }
+      });
+
+      sidebarToggle.addEventListener("click", () => {
+        setSidebarExpanded(stage.classList.contains("sidebar-collapsed"));
+      });
+
+      function openCommandPalette() {
+        window.clearTimeout(commandCloseTimer);
+        commandOverlay.hidden = false;
+
+        window.requestAnimationFrame(() => {
+          commandOverlay.classList.add("is-open");
+          commandInput.focus({ preventScroll: true });
+        });
+      }
+
+      function closeCommandPalette() {
+        commandOverlay.classList.remove("is-open");
+        commandCloseTimer = window.setTimeout(() => {
+          commandOverlay.hidden = true;
+          commandInput.value = "";
+        }, 220);
+      }
+
+      commandTrigger.addEventListener("click", openCommandPalette);
+
+      commandOverlay.addEventListener("click", (event) => {
+        if (event.target === commandOverlay) {
+          closeCommandPalette();
+        }
+      });
+
+      commandRows.forEach((row) => {
+        row.addEventListener("click", closeCommandPalette);
+      });
+
+      function openWidgetMenu() {
+        window.clearTimeout(widgetMenuCloseTimer);
+        widgetActionsMenu.hidden = false;
+        widgetMenuButton.setAttribute("aria-expanded", "true");
+        placeFloating(widgetMenuButton, widgetActionsMenu, widgetMenuButton.closest(".table-actions"));
+
+        window.requestAnimationFrame(() => {
+          widgetActionsMenu.classList.add("is-open");
+        });
+      }
+
+      function closeWidgetMenu() {
+        widgetActionsMenu.classList.remove("is-open");
+        widgetMenuButton.setAttribute("aria-expanded", "false");
+
+        widgetMenuCloseTimer = window.setTimeout(() => {
+          widgetActionsMenu.hidden = true;
+          widgetActionsMenu.style.maxHeight = "";
+          widgetActionsMenu.style.overflowY = "";
+        }, 180);
+      }
+
+      function toggleWidgetMenu() {
+        if (widgetActionsMenu.hidden) {
+          openWidgetMenu();
+        } else {
+          closeWidgetMenu();
+        }
+      }
+
+      widgetMenuButton.addEventListener("click", (event) => {
+        event.stopPropagation();
+        toggleWidgetMenu();
+      });
+
+      widgetActionsMenu.addEventListener("click", (event) => {
+        event.stopPropagation();
+      });
+
+      widgetActionItems.forEach((item) => {
+        item.addEventListener("click", closeWidgetMenu);
+      });
+
+      function closeSelectMenu(menu) {
+        const trigger = menu.querySelector(".select-trigger");
+        const popover = menu.querySelector(".select-popover");
+        const closeTimer = selectCloseTimers.get(menu);
+
+        window.clearTimeout(closeTimer);
+        popover.classList.remove("is-open");
+        trigger.setAttribute("aria-expanded", "false");
+
+        selectCloseTimers.set(menu, window.setTimeout(() => {
+          popover.hidden = true;
+          menu.classList.remove("is-open");
+        }, 180));
+      }
+
+      function closeOtherSelectMenus(activeMenu) {
+        selectMenus.forEach((menu) => {
+          const popover = menu.querySelector(".select-popover");
+
+          if (menu !== activeMenu && !popover.hidden) {
+            closeSelectMenu(menu);
+          }
+        });
+      }
+
+      function openSelectMenu(menu) {
+        const trigger = menu.querySelector(".select-trigger");
+        const popover = menu.querySelector(".select-popover");
+        const closeTimer = selectCloseTimers.get(menu);
+
+        closeOtherSelectMenus(menu);
+        window.clearTimeout(closeTimer);
+        menu.classList.add("is-open");
+        popover.hidden = false;
+        trigger.setAttribute("aria-expanded", "true");
+        placeFloating(trigger, popover, menu);
+
+        window.requestAnimationFrame(() => {
+          popover.classList.add("is-open");
+        });
+      }
+
+      function toggleSelectMenu(menu) {
+        const popover = menu.querySelector(".select-popover");
+
+        if (popover.hidden) {
+          openSelectMenu(menu);
+        } else {
+          closeSelectMenu(menu);
+        }
+      }
+
+      selectMenus.forEach((menu) => {
+        const trigger = menu.querySelector(".select-trigger");
+        const value = menu.querySelector(".select-value");
+        const popover = menu.querySelector(".select-popover");
+        const options = menu.querySelectorAll(".select-option");
+
+        trigger.addEventListener("click", (event) => {
+          event.stopPropagation();
+          toggleSelectMenu(menu);
+        });
+
+        popover.addEventListener("click", (event) => {
+          event.stopPropagation();
+        });
+
+        options.forEach((option) => {
+          option.addEventListener("click", () => {
+            options.forEach((item) => item.setAttribute("aria-selected", "false"));
+            option.setAttribute("aria-selected", "true");
+            value.textContent = option.textContent;
+            closeSelectMenu(menu);
+            trigger.focus({ preventScroll: true });
+          });
+        });
+      });
+
+      window.addEventListener("resize", () => {
+        if (!widgetActionsMenu.hidden) {
+          placeFloating(widgetMenuButton, widgetActionsMenu, widgetMenuButton.closest(".table-actions"));
+        }
+
+        selectMenus.forEach((menu) => {
+          const trigger = menu.querySelector(".select-trigger");
+          const popover = menu.querySelector(".select-popover");
+
+          if (popover && !popover.hidden) {
+            placeFloating(trigger, popover, menu);
+          }
+        });
+      });
+
+      document.addEventListener("click", () => {
+        if (!widgetActionsMenu.hidden) {
+          closeWidgetMenu();
+        }
+
+        closeOtherSelectMenus(null);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+          event.preventDefault();
+          openCommandPalette();
+          return;
+        }
+
+        if (event.key === "Escape" && !commandOverlay.hidden) {
+          closeCommandPalette();
+        }
+
+        if (event.key === "Escape" && !widgetActionsMenu.hidden) {
+          closeWidgetMenu();
+          widgetMenuButton.focus({ preventScroll: true });
+        }
+
+        if (event.key === "Escape") {
+          selectMenus.forEach((menu) => {
+            const trigger = menu.querySelector(".select-trigger");
+            const popover = menu.querySelector(".select-popover");
+
+            if (!popover.hidden) {
+              closeSelectMenu(menu);
+              trigger.focus({ preventScroll: true });
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

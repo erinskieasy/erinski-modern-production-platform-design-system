@@ -1,0 +1,81 @@
+@import url("../foundation/colors.tokens.css");
+@import url("../foundation/typography.tokens.css");
+@import url("../foundation/rhythm.tokens.css");
+@import url("../foundation/motion.tokens.css");
+
+.ds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-icon-label-gap);
+  min-block-size: var(--ds-control-height);
+  padding: 0 var(--ds-control-padding-inline);
+  border: 1px solid var(--ds-color-border-control);
+  border-radius: var(--ds-radius-control);
+  background: var(--ds-color-surface-raised);
+  color: var(--ds-color-text-strong);
+  font: var(--ds-font-weight-control) var(--ds-font-size-ui) / var(--ds-control-height) var(--ds-font-family-ui);
+  letter-spacing: var(--ds-letter-spacing);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--ds-motion-hover),
+    border-color var(--ds-motion-hover),
+    color var(--ds-motion-hover),
+    opacity var(--ds-motion-hover),
+    transform var(--ds-motion-hover);
+}
+
+.ds-button:hover,
+.ds-button:focus-visible {
+  background: var(--ds-color-clickable-hover-bg);
+  border-color: var(--ds-color-border-hover);
+}
+
+.ds-button:disabled,
+.ds-button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.ds-button--primary {
+  border-color: var(--ds-color-action-border);
+  background: var(--ds-color-action);
+  color: var(--ds-color-text-on-accent);
+}
+
+.ds-button--primary:hover,
+.ds-button--primary:focus-visible {
+  border-color: var(--ds-color-action-hover);
+  background: var(--ds-color-action-hover);
+}
+
+.ds-button__icon {
+  inline-size: var(--ds-icon-size);
+  block-size: var(--ds-icon-size);
+  flex: 0 0 var(--ds-icon-size);
+}
+
+.ds-top-action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-icon-label-gap);
+  min-block-size: var(--ds-control-height);
+  padding-inline: var(--ds-control-padding-inline);
+  border-radius: var(--ds-radius-control);
+  background: transparent;
+  color: var(--ds-color-text-strong);
+  font: var(--ds-font-weight-normal) var(--ds-font-size-ui) / var(--ds-control-height) var(--ds-font-family-ui);
+  letter-spacing: var(--ds-letter-spacing);
+  text-decoration: none;
+  transition:
+    background-color var(--ds-motion-hover),
+    color var(--ds-motion-hover);
+}
+
+.ds-top-action:hover,
+.ds-top-action:focus-visible {
+  background: var(--ds-color-clickable-hover-bg);
+  outline: none;
+}

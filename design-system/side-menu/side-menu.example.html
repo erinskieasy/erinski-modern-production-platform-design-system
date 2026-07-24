@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aligned Side Menu Example</title>
+    <link rel="stylesheet" href="./side-menu.css">
+  </head>
+  <body>
+    <aside class="ds-side-panel ds-side-panel--viewport" data-ds-side-menu data-side-menu-theme="aligned" aria-label="Primary navigation">
+      <header class="ds-side-header">
+        <img class="ds-side-brand-mark ds-site-icon ds-site-icon--topbar" src="../../assets/site-icon.svg" alt="">
+        <div class="ds-side-brand-name">account@example.com</div>
+      </header>
+
+      <nav class="ds-side-nav" aria-label="Sections">
+        <div class="ds-side-section-label">Build</div>
+
+        <a class="ds-side-item" href="#">
+          <svg class="ds-side-icon" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M5.2 3.6 10 10l-4.8 6.4M10.2 3.6 15 10l-4.8 6.4"></path>
+          </svg>
+          <span class="ds-side-item-label">Compute</span>
+        </a>
+
+        <a class="ds-side-item" href="#">
+          <svg class="ds-side-icon" viewBox="0 0 20 20" aria-hidden="true">
+            <circle cx="10" cy="10" r="7.2"></circle>
+            <path d="m8.4 6.8 4.4 3.2-4.4 3.2z"></path>
+          </svg>
+          <span class="ds-side-item-label">Media</span>
+        </a>
+
+        <div class="ds-side-section-label">Protect &amp; Connect</div>
+
+        <button class="ds-side-item" type="button" data-ds-side-toggle aria-expanded="true" aria-controls="security-submenu">
+          <svg class="ds-side-icon" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M10 2.7 15.3 5v4.1c0 3.5-2 6.7-5.3 8.2-3.3-1.5-5.3-4.7-5.3-8.2V5z"></path>
+            <path d="M10 6.2v5.9M10 14.2v.1"></path>
+          </svg>
+          <span class="ds-side-item-label">Application security</span>
+          <i class="ds-side-chevron" aria-hidden="true"></i>
+        </button>
+
+        <div class="ds-side-submenu" id="security-submenu">
+          <a class="ds-side-subitem" href="#"><span class="ds-side-subitem-label">Security insights</span></a>
+          <a class="ds-side-subitem" href="#"><span class="ds-side-subitem-label">WAF</span></a>
+          <a class="ds-side-subitem" href="#"><span class="ds-side-subitem-label">Investigate</span></a>
+          <a class="ds-side-subitem" href="#"><span class="ds-side-subitem-label">Infrastructure</span></a>
+          <a class="ds-side-subitem" href="#"><span class="ds-side-subitem-label">Turnstile</span></a>
+        </div>
+
+        <a class="ds-side-item" href="#">
+          <svg class="ds-side-icon" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M4.2 4.8c2.4 0 4.2-.8 5.8-2.2 1.6 1.4 3.4 2.2 5.8 2.2v4.4c0 3.4-2.1 6.1-5.8 7.9-3.7-1.8-5.8-4.5-5.8-7.9z"></path>
+            <path d="m7.4 9.8 1.8 1.8 3.5-4"></path>
+          </svg>
+          <span class="ds-side-item-label">Zero Trust</span>
+        </a>
+      </nav>
+
+      <footer class="ds-side-footer">
+        <button class="ds-side-account" type="button" aria-label="Manage account for Erinski Easy">
+          <span class="ds-side-account__avatar" aria-hidden="true">EE</span>
+          <span class="ds-side-account__identity">
+            <span class="ds-side-account__name">Erinski Easy</span>
+            <span class="ds-side-account__email">erinski.easy@intellibus...</span>
+          </span>
+          <span class="ds-side-account__role ds-pill">Admin</span>
+        </button>
+      </footer>
+    </aside>
+
+    <script src="./side-menu.behavior.js"></script>
+  </body>
+</html>

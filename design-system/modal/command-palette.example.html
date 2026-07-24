@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aligned Command Palette</title>
+    <link rel="stylesheet" href="../primitives/buttons.css">
+    <link rel="stylesheet" href="./modal.css">
+  </head>
+  <body data-ds-theme="aligned">
+    <button class="ds-button" type="button" data-ds-modal-trigger="#command-palette">Quick search</button>
+
+    <div class="ds-modal-overlay" id="command-palette" data-ds-modal hidden>
+      <section class="ds-modal" role="dialog" aria-modal="true" aria-label="Command search">
+        <header class="ds-modal__header">
+          <div class="ds-command-search">
+            <svg class="ds-command-search__icon" viewBox="0 0 20 20" aria-hidden="true">
+              <circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+              <path d="M12.8 12.8 17 17" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path>
+            </svg>
+            <input class="ds-command-search__input" placeholder="Search products, pages, and features...">
+            <kbd class="ds-kbd">Esc</kbd>
+          </div>
+        </header>
+
+        <div class="ds-modal__body">
+          <div class="ds-command-heading">Search tips</div>
+          <button class="ds-command-row" type="button">
+            <svg class="ds-command-row__icon" viewBox="0 0 20 20" aria-hidden="true"></svg>
+            <strong class="ds-command-row__prefix">ask:</strong>
+            <span class="ds-command-row__dash" aria-hidden="true"></span>
+            <span class="ds-command-row__description">Ask AI</span>
+          </button>
+          <button class="ds-command-row" type="button">
+            <svg class="ds-command-row__icon" viewBox="0 0 20 20" aria-hidden="true"></svg>
+            <strong class="ds-command-row__prefix">access:</strong>
+            <span class="ds-command-row__dash" aria-hidden="true"></span>
+            <span class="ds-command-row__description">Search Access applications</span>
+          </button>
+        </div>
+
+        <footer class="ds-modal__footer">
+          <kbd class="ds-kbd">↑</kbd>
+          <kbd class="ds-kbd">↓</kbd>
+          <span>to navigate</span>
+        </footer>
+      </section>
+    </div>
+
+    <script src="./modal.behavior.js"></script>
+  </body>
+</html>

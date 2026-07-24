@@ -1,0 +1,45 @@
+@import url("../foundation/colors.tokens.css");
+@import url("../foundation/motion.tokens.css");
+
+[data-ds-scrollbar] {
+  --ds-scrollbar-track-inline-size: 8px;
+  --ds-scrollbar-track-inset-inline: 5px;
+  --ds-scrollbar-thumb-inline-size: 4px;
+  --ds-scrollbar-thumb-min-block-size: 48px;
+  --ds-scrollbar-thumb-color: var(--ds-color-scrollbar-thumb);
+  scrollbar-width: none;
+}
+
+[data-ds-scrollbar].is-scrollbar-positioned {
+  position: relative;
+}
+
+[data-ds-scrollbar]::-webkit-scrollbar {
+  display: none;
+}
+
+.ds-scrollbar__track {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: var(--ds-scrollbar-track-inset-inline);
+  z-index: 100;
+  inline-size: var(--ds-scrollbar-track-inline-size);
+  block-size: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--ds-motion-hover, 180ms ease);
+}
+
+[data-ds-scrollbar].is-scrollbar-active > .ds-scrollbar__track {
+  opacity: 1;
+}
+
+.ds-scrollbar__thumb {
+  position: absolute;
+  inset-inline-end: calc((var(--ds-scrollbar-track-inline-size) - var(--ds-scrollbar-thumb-inline-size)) / 2);
+  inset-block-start: 0;
+  inline-size: var(--ds-scrollbar-thumb-inline-size);
+  min-block-size: var(--ds-scrollbar-thumb-min-block-size);
+  border-radius: 999px;
+  background: var(--ds-scrollbar-thumb-color);
+}

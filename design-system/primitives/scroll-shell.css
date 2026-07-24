@@ -1,0 +1,27 @@
+@import url("../foundation/colors.tokens.css");
+@import url("../foundation/motion.tokens.css");
+
+.ds-scroll-shell {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  min-block-size: 0;
+  overflow: hidden;
+  background: var(--ds-color-surface-raised);
+}
+
+.ds-scroll-shell__header,
+.ds-scroll-shell__footer {
+  flex: 0 0 auto;
+  background: var(--ds-color-surface-raised);
+}
+
+.ds-scroll-shell__body {
+  min-block-size: 0;
+  overflow: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.ds-scroll-shell__body::-webkit-scrollbar {
+  display: none;
+}

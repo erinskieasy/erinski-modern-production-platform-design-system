@@ -1,0 +1,16 @@
+.ds-site-icon {
+  display: block;
+  inline-size: 45px;
+  block-size: 25px;
+  object-fit: contain;
+}
+
+.ds-site-icon--topbar {
+  inline-size: 45px;
+  block-size: 25px;
+}
+
+.ds-site-icon--auth {
+  inline-size: 40px;
+  block-size: 28px;
+}

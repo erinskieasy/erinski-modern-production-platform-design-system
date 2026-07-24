@@ -1,0 +1,8 @@
+{
+  "name": "erinski-modern-production-platform-design-system",
+  "private": true,
+  "scripts": {
+    "test": "node --test design-system/tests/component-contracts.test.mjs",
+    "test:contracts": "node --test design-system/tests/component-contracts.test.mjs"
+  }
+}

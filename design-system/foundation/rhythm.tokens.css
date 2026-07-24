@@ -1,0 +1,37 @@
+:root,
+[data-ds-theme="aligned"] {
+  --ds-radius-control: 8px;
+  --ds-radius-panel: 8px;
+  --ds-radius-tiny: 5px;
+
+  --ds-row-height: 32px;
+  --ds-row-step: 36px;
+  --ds-row-gap: calc(var(--ds-row-step) - var(--ds-row-height));
+  --ds-connected-gap: 8px;
+
+  --ds-page-gutter: clamp(20px, 2.5vw, 40px);
+  --ds-page-top-gap: 44px;
+  --ds-page-heading-gap: 8px;
+  --ds-page-intro-gap: 40px;
+  --ds-page-control-gap: 12px;
+  --ds-page-section-gap: 20px;
+
+  --ds-control-height: 36px;
+  --ds-control-padding-inline: 12px;
+  --ds-control-gap: 10px;
+
+  --ds-icon-size: 17px;
+  --ds-icon-stroke-width: 1.35;
+  --ds-icon-label-gap: 5px;
+
+  --ds-panel-outline-width: 1px;
+  --ds-shadow-static: 0 2px 8px rgb(0 0 0 / 4%);
+  --ds-control-shadow: var(--ds-shadow-static);
+  --ds-control-hover-shadow: var(--ds-shadow-static);
+  --ds-control-open-shadow: 0 14px 32px rgb(0 0 0 / 12%);
+  --ds-layer-dropdown: 1000;
+  --ds-modal-header-height: 58px;
+  --ds-modal-footer-height: 40px;
+  --ds-modal-width: min(720px, calc(100vw - 48px));
+  --ds-modal-aspect-ratio: 16 / 9;
+}

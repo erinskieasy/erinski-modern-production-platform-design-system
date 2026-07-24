@@ -1,0 +1,75 @@
+@import url("../foundation/colors.tokens.css");
+@import url("../foundation/typography.tokens.css");
+@import url("../foundation/rhythm.tokens.css");
+@import url("../foundation/motion.tokens.css");
+
+.ds-bar {
+  display: flex;
+  align-items: center;
+  color: var(--ds-color-text-default);
+  font: var(--ds-font-weight-normal) var(--ds-font-size-ui) / var(--ds-line-height-ui) var(--ds-font-family-ui);
+  letter-spacing: var(--ds-letter-spacing);
+}
+
+.ds-bar__group {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-page-control-gap);
+  min-inline-size: 0;
+}
+
+.ds-bar__item,
+.ds-bar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-icon-label-gap);
+  min-inline-size: 0;
+  min-block-size: var(--ds-row-height);
+  padding-inline: 8px;
+  border-radius: var(--ds-radius-control);
+  background: transparent;
+  color: var(--ds-color-text-default);
+  font: var(--ds-font-weight-normal) var(--ds-font-size-ui) / var(--ds-line-height-ui) var(--ds-font-family-ui);
+  letter-spacing: var(--ds-letter-spacing);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--ds-motion-hover),
+    color var(--ds-motion-hover);
+}
+
+.ds-bar__item:hover,
+.ds-bar__item:focus-visible,
+.ds-bar__link:hover,
+.ds-bar__link:focus-visible {
+  background: var(--ds-color-clickable-hover-bg);
+  color: var(--ds-color-text-strong);
+  outline: none;
+}
+
+.ds-bar__icon {
+  inline-size: var(--ds-icon-size);
+  block-size: var(--ds-icon-size);
+  flex: 0 0 var(--ds-icon-size);
+  color: var(--ds-color-icon-default);
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: var(--ds-icon-stroke-width);
+}
+
+.ds-bar__icon--outline {
+  fill: none;
+}
+
+.ds-bar__separator {
+  inline-size: 1px;
+  block-size: 20px;
+  flex: 0 0 1px;
+  background: var(--ds-color-border-subtle);
+}
+
+.ds-bar__muted {
+  color: var(--ds-color-text-muted);
+}

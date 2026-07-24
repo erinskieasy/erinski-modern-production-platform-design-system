@@ -1,0 +1,65 @@
+@import url("../foundation/colors.tokens.css");
+@import url("../foundation/typography.tokens.css");
+@import url("../foundation/rhythm.tokens.css");
+@import url("../foundation/motion.tokens.css");
+
+.ds-icon-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-row-gap);
+  margin: 0;
+  padding: 0;
+  color: var(--ds-color-text-default);
+  font-family: var(--ds-font-family-ui);
+  font-size: var(--ds-font-size-ui);
+  letter-spacing: var(--ds-letter-spacing);
+  list-style: none;
+}
+
+.ds-icon-list-row {
+  display: grid;
+  grid-template-columns: var(--ds-icon-size) var(--ds-icon-label-gap) minmax(0, 1fr);
+  align-items: center;
+  min-block-size: var(--ds-row-height);
+  border: 0;
+  border-radius: var(--ds-radius-control);
+  background: transparent;
+  color: var(--ds-color-text-default);
+  font: 500 var(--ds-font-size-ui) / var(--ds-line-height-ui) var(--ds-font-family-ui);
+  letter-spacing: var(--ds-letter-spacing);
+  text-align: start;
+  text-decoration: none;
+  transition:
+    background-color var(--ds-motion-hover),
+    color var(--ds-motion-hover),
+    opacity var(--ds-motion-hover);
+}
+
+.ds-icon-list-row:hover,
+.ds-icon-list-row:focus-visible,
+.ds-icon-list-row[aria-current="page"],
+.ds-icon-list-row.is-active {
+  background: var(--ds-color-clickable-hover-bg);
+}
+
+.ds-icon-list-icon {
+  grid-column: 1;
+  inline-size: var(--ds-icon-size);
+  block-size: var(--ds-icon-size);
+  color: var(--ds-color-icon-muted);
+  stroke: currentColor;
+  stroke-width: var(--ds-icon-stroke-width);
+}
+
+.ds-icon-list-label {
+  grid-column: 3;
+  min-inline-size: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ds-icon-list-meta {
+  color: var(--ds-color-text-muted);
+  font-weight: var(--ds-font-weight-normal);
+}

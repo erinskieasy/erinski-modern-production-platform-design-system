@@ -1,0 +1,9 @@
+:root,
+[data-ds-theme="aligned"] {
+  --ds-motion-hover: 180ms ease;
+  --ds-motion-chevron: 240ms ease;
+  --ds-motion-panel: 280ms ease;
+  --ds-motion-submenu: 260ms ease;
+  --ds-motion-modal: 220ms ease;
+  --ds-motion-scroll: 260ms ease;
+}

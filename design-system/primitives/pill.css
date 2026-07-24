@@ -1,0 +1,39 @@
+@import url("../foundation/colors.tokens.css");
+@import url("../foundation/typography.tokens.css");
+@import url("../foundation/rhythm.tokens.css");
+
+.ds-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-icon-label-gap);
+  max-inline-size: 100%;
+  min-block-size: 28px;
+  padding: 0 10px 0 6px;
+  border: 1px solid var(--ds-color-border-control);
+  border-radius: 999px;
+  background: var(--ds-color-surface-raised);
+  color: var(--ds-color-text-default);
+  font: var(--ds-font-weight-normal) var(--ds-font-size-ui) / var(--ds-line-height-ui) var(--ds-font-family-ui);
+  white-space: nowrap;
+}
+
+.ds-pill__icon {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 18px;
+  block-size: 18px;
+  flex: 0 0 18px;
+  border-radius: 50%;
+  background: var(--ds-color-text-default);
+  color: var(--ds-color-white);
+}
+
+.ds-pill__icon svg {
+  inline-size: 12px;
+  block-size: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}

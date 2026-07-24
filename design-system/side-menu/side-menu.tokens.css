@@ -1,0 +1,87 @@
+:root,
+[data-side-menu-theme="aligned"] {
+  --ds-side-panel-width: 16.25rem;
+  --ds-side-viewport-footer-offset: 48px;
+  --ds-side-header-height: 58px;
+  --ds-side-footer-height: 76px;
+
+  --ds-side-surface: var(--ds-color-surface, oklch(0.9875 0 0));
+  --ds-side-text-strong: var(--ds-color-text-strong, oklch(0.145 0 0));
+  --ds-side-text-default: var(--ds-color-text-default, oklch(0.205 0 0));
+  --ds-side-text-muted: var(--ds-color-text-muted, oklch(0.556 0 0));
+  --ds-side-border: var(--ds-color-border-subtle, #e2e2e2);
+  --ds-side-hover-bg: var(--ds-color-clickable-hover-bg, oklch(0.96 0 0));
+  --ds-side-icon-color: var(--ds-color-icon-muted, #8b8f94);
+  --ds-side-chevron-color: var(--ds-color-chevron, #9a9a9a);
+
+  --ds-side-font-family: var(--ds-font-family-ui, "Geist", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+  --ds-side-letter-spacing: var(--ds-letter-spacing, 0);
+  --ds-side-font-size: var(--ds-font-size-ui, 14px);
+  --ds-side-divider-weight: var(--ds-font-weight-divider, 490);
+  --ds-side-main-weight: var(--ds-font-weight-control, 500);
+  --ds-side-subitem-weight: var(--ds-font-weight-control, 500);
+
+  --ds-side-row-height: var(--ds-row-height, 32px);
+  --ds-side-row-step: var(--ds-row-step, 36px);
+  --ds-side-row-gap: calc(var(--ds-side-row-step) - var(--ds-side-row-height));
+  --ds-side-radius: var(--ds-radius-control, 8px);
+
+  --ds-side-nav-top-space: 52px;
+  --ds-side-nav-bottom-space: 24px;
+  --ds-side-main-left: 32px;
+  --ds-side-main-right: 14px;
+  --ds-side-icon-size: var(--ds-icon-size, 17px);
+  --ds-side-icon-top: 7.5px;
+  --ds-side-icon-stroke-width: var(--ds-icon-stroke-width, 1.35);
+  --ds-side-icon-label-gap: var(--ds-icon-label-gap, 5px);
+  --ds-side-item-text-left: calc(var(--ds-side-icon-size) + var(--ds-side-icon-label-gap));
+
+  --ds-side-divider-left: 32px;
+  --ds-side-divider-line-height: 20px;
+  --ds-side-divider-scale-x: 0.95;
+  --ds-side-divider-scale-y: 0.9;
+  --ds-side-menu-scale-x: 0.95;
+  --ds-side-menu-scale-y: 0.95;
+
+  --ds-side-subitem-left: 42px;
+  --ds-side-subitem-right: 14px;
+  --ds-side-subitem-padding-left: 12px;
+  --ds-side-subrail-left: 41px;
+  --ds-side-subrail-top: 4px;
+  --ds-side-subrail-bottom: 8px;
+  --ds-side-subitem-count: 5;
+  --ds-side-submenu-open-size: calc(var(--ds-side-row-step) * var(--ds-side-subitem-count));
+
+  --ds-side-chevron-size: 7px;
+  --ds-side-chevron-right: 18px;
+  --ds-side-chevron-right-top: 12px;
+  --ds-side-chevron-down-top: 10px;
+  --ds-side-chevron-stroke-width: 1.3px;
+
+  --ds-side-brand-mark-left: 22px;
+  --ds-side-brand-mark-top: 22px;
+  --ds-side-brand-mark-width: 45px;
+  --ds-side-brand-mark-height: 25px;
+  --ds-side-brand-text-left: 95px;
+  --ds-side-brand-text-top: 28px;
+  --ds-side-brand-text-width: 204px;
+  --ds-side-brand-font-size: var(--ds-font-size-caption, 13px);
+  --ds-side-brand-font-weight: var(--ds-font-weight-brand, 650);
+  --ds-side-brand-line-height: var(--ds-line-height-caption, 19.5px);
+
+  --ds-side-footer-rule-left: 14px;
+  --ds-side-footer-rule-right: 14px;
+  --ds-side-footer-item-top: 24px;
+  --ds-side-footer-bottom-space: 20px;
+  --ds-side-account-margin: 12px;
+  --ds-side-account-height: 52px;
+  --ds-side-account-avatar-size: 36px;
+  --ds-side-account-column-gap: 10px;
+  --ds-side-account-padding-inline: 10px;
+  --ds-side-account-collapsed-width: 40px;
+
+  --ds-side-motion-hover: var(--ds-motion-hover, 180ms ease);
+  --ds-side-motion-chevron: var(--ds-motion-chevron, 240ms ease);
+  --ds-side-motion-submenu: var(--ds-motion-submenu, 260ms ease);
+  --ds-side-submenu-closed-shift: -12px;
+}

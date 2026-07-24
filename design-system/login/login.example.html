@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Approved Login Component</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/site-icon.svg">
+    <link rel="stylesheet" href="./login.css">
+    <style>
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        background: var(--ds-color-surface);
+      }
+
+      .login-example {
+        position: relative;
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="login-example ds-login-page">
+      <section class="ds-login" aria-labelledby="login-title">
+        <div class="ds-login__brand-row" aria-hidden="true">
+          <div class="ds-login__provider-icon ds-login__provider-icon--google">
+            <img src="../../assets/google-g.svg" alt="">
+          </div>
+          <div class="ds-login__connector"><span></span><span></span><span></span></div>
+          <div class="ds-login__provider-icon">
+            <img class="ds-site-icon ds-site-icon--auth" src="../../assets/site-icon.svg" alt="">
+          </div>
+        </div>
+
+        <h1 class="ds-login__title" id="login-title">Continue to Vector Ingestion Console</h1>
+        <p class="ds-login__copy">Choose an account to sign in with Google</p>
+
+        <div class="ds-login__account-wrap">
+          <button class="ds-login__account" type="button">
+            <span class="ds-login__avatar" aria-hidden="true">E</span>
+            <span class="ds-login__account-copy">
+              <strong>Erinski Easy</strong>
+              <small>erinski@methodbyeasy.com</small>
+            </span>
+          </button>
+          <button class="ds-login__clear" type="button" aria-label="Forget erinski@methodbyeasy.com" title="Forget this account">
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="m6 6 8 8M14 6l-8 8"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="ds-login__divider" aria-hidden="true">
+          <span></span><strong>OR</strong><span></span>
+        </div>
+
+        <div class="ds-login__actions">
+          <button class="ds-pill-button" type="button">
+            <span class="ds-pill-button__icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20">
+                <path d="M8 4.5H5.5A1.5 1.5 0 0 0 4 6v8a1.5 1.5 0 0 0 1.5 1.5H8"></path>
+                <path d="M12 6.5 15.5 10 12 13.5M15 10H8"></path>
+              </svg>
+            </span>
+            <span>Log in to another account</span>
+          </button>
+          <button class="ds-pill-button" type="button">
+            <span class="ds-pill-button__icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20">
+                <circle cx="8" cy="7" r="3"></circle>
+                <path d="M2.75 15.5c.7-2.35 2.45-3.5 5.25-3.5 1.35 0 2.45.27 3.3.82M15 9.5v6M12 12.5h6"></path>
+              </svg>
+            </span>
+            <span>Create account</span>
+          </button>
+        </div>
+
+        <div class="ds-login__links">
+          <a href="#">Terms of Use</a><span></span><a href="#">Privacy Policy</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

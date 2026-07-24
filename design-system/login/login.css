@@ -1,0 +1,261 @@
+@import url("../foundation/colors.tokens.css");
+@import url("../foundation/typography.tokens.css");
+@import url("../foundation/rhythm.tokens.css");
+@import url("../foundation/motion.tokens.css");
+@import url("../primitives/pill-button.css");
+@import url("../primitives/site-icon.css");
+
+:root,
+[data-ds-theme="aligned"] {
+  --ds-login-width: 320px;
+  --ds-login-viewport-inset: 24px;
+  --ds-login-page-min-height: 560px;
+  --ds-login-center-offset: -12px;
+  --ds-login-provider-size: 64px;
+  --ds-login-provider-radius: var(--ds-radius-control);
+  --ds-login-provider-mark-size: 36px;
+  --ds-login-provider-gap: 14px;
+  --ds-login-provider-margin-bottom: 26px;
+  --ds-login-copy-margin-top: 18px;
+  --ds-login-copy-margin-bottom: 42px;
+  --ds-login-account-min-height: 64px;
+  --ds-login-account-padding: 10px 48px 10px 20px;
+  --ds-login-account-gap: 14px;
+  --ds-login-avatar-size: 42px;
+  --ds-login-divider-gap: 13px;
+  --ds-login-divider-margin: 28px;
+  --ds-login-action-gap: 14px;
+  --ds-login-links-gap: 13px;
+  --ds-login-links-margin-top: 36px;
+}
+
+.ds-login-page {
+  min-block-size: var(--ds-login-page-min-height);
+}
+
+.ds-login {
+  position: absolute;
+  inset-inline-start: 50%;
+  inset-block-start: calc(50% + var(--ds-login-center-offset));
+  inline-size: min(var(--ds-login-width), calc(100% - (var(--ds-login-viewport-inset) * 2)));
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  color: var(--ds-color-text-default);
+  font-family: var(--ds-font-family-ui);
+  letter-spacing: var(--ds-letter-spacing);
+  transform: translate(-50%, -50%);
+}
+
+.ds-login__brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-login-provider-gap);
+  margin-block-end: var(--ds-login-provider-margin-bottom);
+}
+
+.ds-login__provider-icon {
+  inline-size: var(--ds-login-provider-size);
+  block-size: var(--ds-login-provider-size);
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ds-color-border-subtle);
+  border-radius: var(--ds-login-provider-radius);
+  background: var(--ds-color-surface);
+  box-shadow: var(--ds-shadow-static);
+}
+
+.ds-login__provider-icon--google img {
+  inline-size: var(--ds-login-provider-mark-size);
+  block-size: var(--ds-login-provider-mark-size);
+  display: block;
+}
+
+.ds-login__connector {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-icon-label-gap);
+}
+
+.ds-login__connector span {
+  inline-size: 5px;
+  block-size: 5px;
+  border-radius: 50%;
+  background: var(--ds-color-icon-muted);
+}
+
+.ds-login__title {
+  position: static;
+  inline-size: 100%;
+  margin: 0;
+  color: var(--ds-color-text-strong);
+  font: var(--ds-font-weight-heading) 30px / 38px var(--ds-font-family-ui);
+  letter-spacing: var(--ds-letter-spacing);
+  text-align: center;
+}
+
+.ds-login__copy {
+  margin: var(--ds-login-copy-margin-top) 0 var(--ds-login-copy-margin-bottom);
+  color: var(--ds-color-text-muted);
+  font: var(--ds-font-weight-normal) var(--ds-font-size-ui) / 22px var(--ds-font-family-ui);
+  text-align: center;
+}
+
+.ds-login__account-wrap {
+  position: relative;
+  inline-size: 100%;
+}
+
+.ds-login__account {
+  position: relative;
+  inline-size: 100%;
+  min-block-size: var(--ds-login-account-min-height);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-login-account-gap);
+  padding: var(--ds-login-account-padding);
+  border: 1px solid var(--ds-color-border-control);
+  border-radius: var(--ds-radius-control);
+  background: var(--ds-color-surface);
+  color: var(--ds-color-text-default);
+  box-shadow: var(--ds-shadow-static);
+  cursor: pointer;
+  font: inherit;
+  text-align: start;
+  transition:
+    background-color var(--ds-motion-hover),
+    border-color var(--ds-motion-hover),
+    box-shadow var(--ds-motion-hover);
+}
+
+.ds-login__account:disabled,
+.ds-login__clear:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.ds-login__account:hover,
+.ds-login__account:focus-visible {
+  background: var(--ds-color-clickable-hover-bg);
+  border-color: var(--ds-color-border-hover);
+  box-shadow: var(--ds-shadow-static);
+  outline: none;
+}
+
+.ds-login__avatar {
+  inline-size: var(--ds-login-avatar-size);
+  block-size: var(--ds-login-avatar-size);
+  display: grid;
+  flex: 0 0 var(--ds-login-avatar-size);
+  place-items: center;
+  border-radius: 50%;
+  background: #ff8718;
+  color: var(--ds-color-white);
+  font: var(--ds-font-weight-brand) 20px / 1 var(--ds-font-family-ui);
+}
+
+.ds-login__account-copy {
+  display: grid;
+  min-inline-size: 0;
+  gap: 1px;
+}
+
+.ds-login__account-copy strong,
+.ds-login__account-copy small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ds-login__account-copy strong {
+  color: var(--ds-color-text-strong);
+  font: var(--ds-font-weight-brand) var(--ds-font-size-ui) / var(--ds-line-height-ui) var(--ds-font-family-ui);
+}
+
+.ds-login__account-copy small {
+  color: var(--ds-color-text-default);
+  font: var(--ds-font-weight-normal) var(--ds-font-size-ui) / var(--ds-line-height-ui) var(--ds-font-family-ui);
+}
+
+.ds-login__clear {
+  position: absolute;
+  inset-inline-end: 18px;
+  inset-block-start: 23px;
+  inline-size: 18px;
+  block-size: 18px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ds-color-icon-muted);
+  cursor: pointer;
+}
+
+.ds-login__clear:hover,
+.ds-login__clear:focus-visible {
+  color: var(--ds-color-text-strong);
+  outline: none;
+}
+
+.ds-login__clear:focus-visible {
+  box-shadow: 0 0 0 2px var(--ds-color-surface), 0 0 0 4px var(--ds-color-border-hover);
+}
+
+.ds-login__clear svg {
+  inline-size: 18px;
+  block-size: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.ds-login__divider {
+  inline-size: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--ds-login-divider-gap);
+  margin-block: var(--ds-login-divider-margin);
+}
+
+.ds-login__divider span {
+  block-size: 1px;
+  background: var(--ds-color-border-subtle);
+}
+
+.ds-login__divider strong {
+  color: var(--ds-color-text-strong);
+  font: var(--ds-font-weight-brand) var(--ds-font-size-caption) / 16px var(--ds-font-family-ui);
+}
+
+.ds-login__actions {
+  display: grid;
+  gap: var(--ds-login-action-gap);
+}
+
+.ds-login__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-login-links-gap);
+  margin-block-start: var(--ds-login-links-margin-top);
+  color: var(--ds-color-text-default);
+  font: var(--ds-font-weight-normal) var(--ds-font-size-caption) / var(--ds-line-height-ui) var(--ds-font-family-ui);
+}
+
+.ds-login__links a {
+  color: var(--ds-color-text-default);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ds-login__links > span {
+  inline-size: 1px;
+  block-size: 16px;
+  background: var(--ds-color-border-subtle);
+}

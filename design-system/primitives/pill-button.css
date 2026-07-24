@@ -1,0 +1,79 @@
+@import url("../foundation/colors.tokens.css");
+@import url("../foundation/typography.tokens.css");
+@import url("../foundation/rhythm.tokens.css");
+@import url("../foundation/motion.tokens.css");
+
+:root,
+[data-ds-theme="aligned"] {
+  --ds-pill-button-height: 56px;
+  --ds-pill-button-padding-inline: 22px;
+  --ds-pill-button-icon-size: 42px;
+  --ds-pill-button-icon-inset: 6px;
+  --ds-pill-button-glyph-size: 20px;
+}
+
+.ds-pill-button {
+  position: relative;
+  inline-size: 100%;
+  block-size: var(--ds-pill-button-height);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-icon-label-gap);
+  padding-inline: var(--ds-pill-button-padding-inline);
+  border: 1px solid var(--ds-color-border-control);
+  border-radius: 999px;
+  background: var(--ds-color-surface);
+  color: var(--ds-color-text-default);
+  box-shadow: var(--ds-shadow-static);
+  cursor: pointer;
+  font: var(--ds-font-weight-control) var(--ds-font-size-ui) / var(--ds-line-height-ui) var(--ds-font-family-ui);
+  letter-spacing: var(--ds-letter-spacing);
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color var(--ds-motion-hover),
+    border-color var(--ds-motion-hover),
+    box-shadow var(--ds-motion-hover),
+    color var(--ds-motion-hover);
+}
+
+.ds-pill-button:hover,
+.ds-pill-button:focus-visible {
+  background: var(--ds-color-clickable-hover-bg);
+  border-color: var(--ds-color-border-hover);
+  box-shadow: var(--ds-shadow-static);
+  outline: none;
+}
+
+.ds-pill-button:disabled,
+.ds-pill-button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.ds-pill-button__icon {
+  position: absolute;
+  inset-inline-start: var(--ds-pill-button-icon-inset);
+  inset-block-start: 50%;
+  inline-size: var(--ds-pill-button-icon-size);
+  block-size: var(--ds-pill-button-icon-size);
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--ds-color-border-control);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ds-color-text-default);
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.ds-pill-button__icon svg {
+  inline-size: var(--ds-pill-button-glyph-size);
+  block-size: var(--ds-pill-button-glyph-size);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}

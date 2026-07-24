@@ -1,0 +1,66 @@
+@import url("../foundation/colors.tokens.css");
+@import url("../foundation/typography.tokens.css");
+@import url("../foundation/rhythm.tokens.css");
+@import url("../foundation/motion.tokens.css");
+@import url("../primitives/pill.css");
+
+.ds-table {
+  inline-size: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--ds-color-border-subtle);
+  border-radius: var(--ds-radius-panel);
+  background: var(--ds-color-surface-raised);
+  box-shadow: var(--ds-shadow-static);
+  color: var(--ds-color-text-default);
+  font-family: var(--ds-font-family-ui);
+}
+
+.ds-table__element {
+  inline-size: 100%;
+  min-inline-size: 520px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.ds-table__head {
+  background: var(--ds-color-surface-muted);
+  color: var(--ds-color-text-default);
+}
+
+.ds-table__row {
+  border-block-end: 1px solid var(--ds-color-border-subtle);
+  transition: background-color var(--ds-motion-hover);
+}
+
+.ds-table__body .ds-table__row:last-child {
+  border-block-end: 0;
+}
+
+.ds-table__body .ds-table__row:hover {
+  background: var(--ds-color-clickable-hover-bg);
+}
+
+.ds-table__cell {
+  padding: 12px 16px;
+  overflow: hidden;
+  color: var(--ds-color-text-default);
+  font-size: var(--ds-font-size-ui);
+  font-weight: var(--ds-font-weight-normal);
+  line-height: var(--ds-line-height-ui);
+  text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ds-table__head .ds-table__cell {
+  font-weight: var(--ds-font-weight-control);
+}
+
+.ds-table__cell--primary {
+  font-weight: var(--ds-font-weight-control);
+}
+
+.ds-table__cell--actions {
+  inline-size: 56px;
+  text-align: end;
+}

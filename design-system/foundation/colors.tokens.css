@@ -1,0 +1,37 @@
+:root,
+[data-ds-theme="aligned"] {
+  --ds-color-white: #fff;
+  --ds-color-black: #000;
+
+  --ds-color-surface: oklch(0.9875 0 0);
+  --ds-color-surface-raised: #fff;
+  --ds-color-surface-muted: oklch(0.96 0 0);
+  --ds-color-clickable-hover-bg: var(--ds-color-surface-muted);
+  --ds-color-control-hover-surface: var(--ds-color-clickable-hover-bg);
+  --ds-color-overlay: rgb(255 255 255 / 72%);
+
+  --ds-color-text-strong: oklch(0.145 0 0);
+  --ds-color-text-default: oklch(0.205 0 0);
+  --ds-color-text-muted: oklch(0.556 0 0);
+  --ds-color-text-placeholder: #8b8f94;
+  --ds-color-text-on-accent: #fff;
+
+  --ds-color-border-subtle: #e2e2e2;
+  --ds-color-border-control: #d9dfe7;
+  --ds-color-border-hover: #d6d6d6;
+  --ds-color-scrollbar-thumb: rgb(32 32 32 / 13%);
+
+  --ds-color-hover-bg: var(--ds-color-clickable-hover-bg);
+  --ds-color-icon-default: #686c70;
+  --ds-color-icon-muted: #8b8f94;
+  --ds-color-chevron: #9a9a9a;
+
+  --ds-color-accent: #287bff;
+  --ds-color-accent-strong: #1e79ff;
+  --ds-color-accent-border: #0d5bd7;
+  --ds-color-danger: #ff1f2f;
+  --ds-color-action: var(--ds-color-text-default);
+  --ds-color-action-hover: #4b4b4b;
+  --ds-color-action-hover: color-mix(in oklch, var(--ds-color-action) 88%, var(--ds-color-surface-raised));
+  --ds-color-action-border: var(--ds-color-text-default);
+}

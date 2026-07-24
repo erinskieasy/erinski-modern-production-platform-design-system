@@ -1,0 +1,17 @@
+@import url("../foundation/colors.tokens.css");
+@import url("../foundation/typography.tokens.css");
+@import url("../foundation/rhythm.tokens.css");
+@import url("../foundation/motion.tokens.css");
+
+:root,
+[data-ds-theme="aligned"] {
+  --ds-modal-surface: var(--ds-color-surface-raised);
+  --ds-modal-overlay: var(--ds-color-overlay);
+  --ds-modal-border-color: var(--ds-color-border-control);
+  --ds-modal-radius: var(--ds-radius-panel);
+  --ds-modal-header-block-size: var(--ds-modal-header-height);
+  --ds-modal-footer-block-size: var(--ds-modal-footer-height);
+  --ds-modal-body-padding: 12px 10px 4px;
+  --ds-modal-command-prefix-gap: 8px;
+  --ds-modal-command-description-gap: 8px;
+}
