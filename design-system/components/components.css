@@ -1,4 +1,4 @@
-.content[data-active-view="components"]::after {
+.content[data-active-view="components"] .content-scroll-viewport::after {
   display: none;
 }
 
@@ -56,6 +56,10 @@
   border-radius: var(--ds-radius-panel);
   background: var(--ds-color-surface-raised);
   box-shadow: var(--ds-shadow-static);
+}
+
+.ds-component-card--wide {
+  grid-column: span 2;
 }
 
 .ds-component-card__label {
@@ -131,6 +135,45 @@
   place-items: center;
 }
 
+.ds-component-specimen--scroll-shell {
+  block-size: 230px;
+  overflow: hidden;
+  border: 1px solid var(--ds-color-border-subtle);
+  border-radius: var(--ds-radius-panel);
+}
+
+.ds-component-specimen--scroll-shell .ds-scroll-shell {
+  --ds-scroll-shell-header-height: 44px;
+  --ds-scroll-shell-footer-height: 36px;
+}
+
+.ds-component-specimen--scroll-shell .ds-scroll-shell__header,
+.ds-component-specimen--scroll-shell .ds-scroll-shell__footer {
+  display: flex;
+  align-items: center;
+  padding-inline: 12px;
+  color: var(--ds-color-text-muted);
+  font-size: 12px;
+}
+
+.ds-component-specimen--scroll-shell .ds-scroll-shell__header {
+  border-block-end: 1px solid var(--ds-color-border-subtle);
+}
+
+.ds-component-specimen--scroll-shell .ds-scroll-shell__footer {
+  border-block-start: 1px solid var(--ds-color-border-subtle);
+}
+
+.ds-component-specimen--scroll-shell .ds-scroll-shell__body {
+  padding: 10px 18px 10px 12px;
+}
+
+.ds-component-specimen--scroll-shell p {
+  margin: 0 0 14px;
+  font-size: 13px;
+  line-height: 20px;
+}
+
 .ds-component-specimen .ds-select-menu {
   inline-size: 100%;
 }
@@ -152,5 +195,9 @@
 @media (max-width: 760px) {
   .ds-components-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ds-component-card--wide {
+    grid-column: auto;
   }
 }

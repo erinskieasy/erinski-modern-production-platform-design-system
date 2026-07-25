@@ -1,0 +1,178 @@
+@import url("../foundation/colors.tokens.css");
+@import url("../foundation/typography.tokens.css");
+@import url("../foundation/rhythm.tokens.css");
+@import url("../foundation/motion.tokens.css");
+
+.ds-markdown-editor {
+  display: grid;
+  gap: 6px;
+  color: var(--ds-color-text-default);
+  font-family: var(--ds-font-family-ui);
+}
+
+.ds-markdown-editor__heading,
+.ds-markdown-editor__toolbar {
+  display: flex;
+  align-items: center;
+}
+
+.ds-markdown-editor__heading {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ds-markdown-editor__label {
+  font-size: var(--ds-font-size-ui);
+  font-weight: var(--ds-font-weight-control);
+  line-height: var(--ds-line-height-ui);
+}
+
+.ds-markdown-editor__hint,
+.ds-markdown-editor__footer {
+  color: var(--ds-color-text-muted);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.ds-markdown-editor__surface {
+  overflow: hidden;
+  border: 1px solid var(--ds-color-border-control);
+  border-radius: var(--ds-radius-control);
+  background: var(--ds-color-surface-raised);
+  transition:
+    border-color var(--ds-motion-hover),
+    box-shadow var(--ds-motion-hover);
+}
+
+.ds-markdown-editor__surface:focus-within {
+  border-color: var(--ds-color-accent);
+  box-shadow: 0 0 0 1px var(--ds-color-accent);
+}
+
+.ds-markdown-editor__toolbar {
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 6px;
+  border-block-end: 1px solid var(--ds-color-border-subtle);
+  background: var(--ds-color-surface);
+}
+
+.ds-markdown-editor__toolbar button {
+  min-block-size: 30px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: var(--ds-radius-tiny);
+  background: transparent;
+  color: var(--ds-color-text-default);
+  cursor: pointer;
+  font: var(--ds-font-weight-normal) 13px / 20px var(--ds-font-family-ui);
+  transition: background-color var(--ds-motion-hover);
+}
+
+.ds-markdown-editor__toolbar button:hover:not(:disabled),
+.ds-markdown-editor__toolbar button:focus-visible,
+.ds-markdown-editor__toolbar button.is-active {
+  background: var(--ds-color-clickable-hover-bg);
+  outline: none;
+}
+
+.ds-markdown-editor__toolbar button:disabled {
+  cursor: default;
+  opacity: .45;
+}
+
+.ds-markdown-editor__toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.ds-markdown-editor__file-input {
+  display: none;
+}
+
+.ds-markdown-editor__textarea {
+  display: block;
+  inline-size: 100%;
+  min-block-size: 250px;
+  resize: vertical;
+  padding: 14px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ds-color-text-default);
+  font: var(--ds-font-weight-normal) var(--ds-font-size-ui) / 1.5 var(--ds-font-family-ui);
+}
+
+.ds-markdown-editor__textarea::placeholder {
+  color: var(--ds-color-text-placeholder);
+}
+
+.ds-markdown-editor__preview {
+  min-block-size: 250px;
+  padding: 14px;
+  color: var(--ds-color-text-default);
+  font-size: var(--ds-font-size-ui);
+  line-height: 1.6;
+}
+
+.ds-markdown-editor__preview > .ds-markdown-editor__empty {
+  color: var(--ds-color-text-muted);
+}
+
+.ds-markdown-editor__preview h1,
+.ds-markdown-editor__preview h2,
+.ds-markdown-editor__preview h3,
+.ds-markdown-editor__preview h4,
+.ds-markdown-editor__preview p,
+.ds-markdown-editor__preview ul,
+.ds-markdown-editor__preview ol {
+  margin: 0;
+}
+
+.ds-markdown-editor__preview h1,
+.ds-markdown-editor__preview h2,
+.ds-markdown-editor__preview h3,
+.ds-markdown-editor__preview h4 {
+  color: var(--ds-color-text-strong);
+  font-weight: var(--ds-font-weight-heading);
+  line-height: 1.25;
+}
+
+.ds-markdown-editor__preview h1 {
+  font-size: 24px;
+}
+
+.ds-markdown-editor__preview h2 {
+  font-size: 20px;
+}
+
+.ds-markdown-editor__preview h3 {
+  font-size: 17px;
+}
+
+.ds-markdown-editor__preview h4 {
+  font-size: 15px;
+}
+
+.ds-markdown-editor__preview > * + * {
+  margin-block-start: 12px;
+}
+
+.ds-markdown-editor__preview ul,
+.ds-markdown-editor__preview ol {
+  padding-inline-start: 22px;
+}
+
+.ds-markdown-editor__preview a {
+  color: var(--ds-color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ds-markdown-editor__footer {
+  justify-self: end;
+}
+
+[data-ds-markdown-preview][hidden],
+[data-ds-markdown-input][hidden] {
+  display: none;
+}

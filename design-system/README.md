@@ -124,7 +124,9 @@ Dropdown and filter hover is a two-part rule: the trigger clarifies its surface 
 
 ## Pills
 
-All pills must conform fully to the pill primitive. Pills are compact outlined capsules with no shadow. Text uses the system dark gray at `14px` and `400`. Leading icons always sit in an `18px` dark-gray circle with white `1.5px` linework, and the icon-to-text gap uses the shared `5px` standard. Role labels, status labels, table tags, and selected entities should not create one-off badge styles.
+All pills must conform fully to the pill primitive. Pills are compact outlined capsules with no shadow. Text uses the system dark gray at `14px` and `400`. Leading icons sit in an `18px` circle with white `1.5px` linework, and the icon-to-text gap uses the shared `5px` standard. Role labels, status labels, table tags, and selected entities should not create one-off badge styles.
+
+Semantic pill modifiers (`.is-success`, `.is-warning`, `.is-danger` / `.is-error`, `.is-info`, and `.is-neutral` / `.is-idle`) change only the icon circle color. The capsule surface, border, and text remain identical across states.
 
 ## Tables
 
@@ -152,6 +154,8 @@ Modals use a fixed top region, internally scrolling body, and fixed bottom regio
 
 All scrollable regions use the custom scrollbar primitive. Native scrollbars are hidden; a thin transparent vertical pill appears on hover, scroll, wheel, pointer movement, or touch pan, then fades out after `1s` of inactivity. The indicator overlays content and never changes layout width. Its fill uses `--ds-color-scrollbar-thumb` so the visible result sits in the same light-gray family as subtle table borders.
 
+The standard structure separates measurement from presentation: a non-scrolling `[data-ds-scrollbar]` frame contains one direct `[data-ds-scrollbar-viewport]` child that owns overflow. The custom track is a sibling of that viewport. This keeps the pill fixed to the body region instead of letting it scroll into a pinned header or footer. The `4px` visible pill sits inside an `8px` drag target and uses pointer capture for direct vertical dragging.
+
 The scrollbar primitive must never impose generic positioning on its host. If a scroll region is already `fixed`, `absolute`, `relative`, or `sticky`, that positioning is preserved. Only static hosts may be upgraded to `.is-scrollbar-positioned` by the behavior script.
 
 The indicator is bounded by the scroll container and must never draw into adjacent fixed or pinned regions. Use `data-ds-scrollbar` on any region that scrolls.
@@ -161,6 +165,12 @@ Scrollbar visibility is scoped to the active scroll container's own direct child
 Collapsed, minimized, icon-only, or otherwise not-full menu states must disable their internal scrolling and hide the scrollbar. Scroll regions that use absolutely positioned children must provide an explicit in-flow scroll extent so the primitive can measure overflow accurately.
 
 Scrollbars are proportional indicators. A scroll container must wrap every item intended to move together; for side menus, search/command controls belong inside the scrolling nav body when they should scroll with the nav. Pinned brand headers and account footers stay outside the scroll container.
+
+## Markdown Editor
+
+`markdown-editor/markdown-editor.css` and `markdown-editor/markdown-editor.behavior.js` define the portable long-form text input. The editor provides heading, bold, italic, bulleted list, numbered list, and link actions; optional plain-text/Markdown import; a live character count; and a preview toggle.
+
+Its built-in preview creates DOM nodes instead of injecting HTML and supports headings, paragraphs, lists, emphasis, strong text, and HTTP(S) links. Applications can replace the built-in preview with their preferred Markdown renderer by handling the cancelable `ds-markdown:preview` event.
 
 ## Motion
 
