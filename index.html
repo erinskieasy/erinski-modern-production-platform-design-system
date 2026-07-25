@@ -18,6 +18,7 @@
         </div>
 
         <div class="sidebar-menu security-collapsed" data-ds-scrollbar>
+          <div class="sidebar-menu-viewport" data-ds-scrollbar-viewport>
           <button class="menu-search-trigger" type="button" aria-haspopup="dialog" aria-controls="command-palette">
             <svg class="menu-search-icon" viewBox="0 0 20 20" aria-hidden="true">
               <circle cx="8.6" cy="8.6" r="6"></circle>
@@ -132,6 +133,8 @@
             </svg>
             <span>Components</span>
           </div>
+          </div>
+          <span class="ds-scrollbar__track" aria-hidden="true"><span class="ds-scrollbar__thumb"></span></span>
         </div>
 
         <footer class="ds-side-footer sidebar-account-footer" aria-label="Signed-in account">
@@ -176,6 +179,7 @@
       </header>
 
       <main class="content" aria-label="Turnstile widgets" data-ds-scrollbar data-active-view="dashboard">
+        <div class="content-scroll-viewport" data-ds-scrollbar-viewport>
         <section class="content-view dashboard-view is-active" data-view="dashboard" aria-label="Turnstile widgets">
           <h1>Turnstile widgets</h1>
           <p class="lede">Turnstile can be embedded into any website without sending traffic through Cloudflare or showing visitors a CAPTCHA</p>
@@ -195,10 +199,12 @@
               <i class="select-arrows" aria-hidden="true"></i>
             </button>
             <div class="select-popover" id="host-filter-menu" role="listbox" data-ds-scrollbar hidden>
-              <button class="select-option" type="button" role="option" aria-selected="true">All hostnames</button>
-              <button class="select-option" type="button" role="option">atlasresume.com</button>
-              <button class="select-option" type="button" role="option">resume.atlas.test</button>
-              <button class="select-option" type="button" role="option">Unassigned hostnames</button>
+              <div class="select-options-viewport" data-ds-scrollbar-viewport>
+                <button class="select-option" type="button" role="option" aria-selected="true">All hostnames</button>
+                <button class="select-option" type="button" role="option">atlasresume.com</button>
+                <button class="select-option" type="button" role="option">resume.atlas.test</button>
+                <button class="select-option" type="button" role="option">Unassigned hostnames</button>
+              </div>
             </div>
           </div>
           <div class="filter select-filter filter-mode" data-select-menu>
@@ -207,10 +213,12 @@
               <i class="select-arrows" aria-hidden="true"></i>
             </button>
             <div class="select-popover" id="mode-filter-menu" role="listbox" data-ds-scrollbar hidden>
-              <button class="select-option" type="button" role="option" aria-selected="true">All widget modes</button>
-              <button class="select-option" type="button" role="option">Managed</button>
-              <button class="select-option" type="button" role="option">Non-interactive</button>
-              <button class="select-option" type="button" role="option">Invisible</button>
+              <div class="select-options-viewport" data-ds-scrollbar-viewport>
+                <button class="select-option" type="button" role="option" aria-selected="true">All widget modes</button>
+                <button class="select-option" type="button" role="option">Managed</button>
+                <button class="select-option" type="button" role="option">Non-interactive</button>
+                <button class="select-option" type="button" role="option">Invisible</button>
+              </div>
             </div>
           </div>
           <div class="filter select-filter filter-clearance" data-select-menu>
@@ -219,10 +227,12 @@
               <i class="select-arrows" aria-hidden="true"></i>
             </button>
             <div class="select-popover" id="clearance-filter-menu" role="listbox" data-ds-scrollbar hidden>
-              <button class="select-option" type="button" role="option" aria-selected="true">All pre-clearance levels</button>
-              <button class="select-option" type="button" role="option">No pre-clearance</button>
-              <button class="select-option" type="button" role="option">Interactive pre-clearance</button>
-              <button class="select-option" type="button" role="option">Managed pre-clearance</button>
+              <div class="select-options-viewport" data-ds-scrollbar-viewport>
+                <button class="select-option" type="button" role="option" aria-selected="true">All pre-clearance levels</button>
+                <button class="select-option" type="button" role="option">No pre-clearance</button>
+                <button class="select-option" type="button" role="option">Interactive pre-clearance</button>
+                <button class="select-option" type="button" role="option">Managed pre-clearance</button>
+              </div>
             </div>
           </div>
 
@@ -279,8 +289,8 @@
               <div class="cell likely"><strong>84.91%</strong></div>
               <div class="cell mode">Managed</div>
               <div class="cell clearance">
-                <span class="status-pill">
-                  <span class="status-pill-icon" aria-hidden="true">
+                <span class="ds-pill is-neutral">
+                  <span class="ds-pill__icon" aria-hidden="true">
                     <svg viewBox="0 0 16 16">
                       <path d="M4.5 8h7"></path>
                     </svg>
@@ -291,9 +301,11 @@
               <div class="table-actions">
                 <button class="menu-dots" type="button" aria-label="Open widget actions" aria-haspopup="menu" aria-expanded="false" aria-controls="widget-actions-menu">...</button>
                 <div class="widget-actions-menu" id="widget-actions-menu" role="menu" aria-label="Widget actions" data-ds-scrollbar hidden>
-                  <button class="widget-action-item" type="button" role="menuitem">View analytics</button>
-                  <button class="widget-action-item" type="button" role="menuitem">Edit Widget</button>
-                  <button class="widget-action-item danger" type="button" role="menuitem">Delete</button>
+                  <div class="widget-actions-viewport" data-ds-scrollbar-viewport>
+                    <button class="widget-action-item" type="button" role="menuitem">View analytics</button>
+                    <button class="widget-action-item" type="button" role="menuitem">Edit Widget</button>
+                    <button class="widget-action-item danger" type="button" role="menuitem">Delete</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -586,11 +598,23 @@
             <article class="ds-component-card" data-contract-example="pill">
               <h2 class="ds-component-card__label">Pill</h2>
               <div class="ds-component-specimen ds-component-specimen--centered">
-                <span class="ds-pill">
+                <span class="ds-pill is-success">
                   <span class="ds-pill__icon" aria-hidden="true">
                     <svg viewBox="0 0 12 12"><path d="M3 6h6"></path></svg>
                   </span>
                   <span>Active</span>
+                </span>
+                <span class="ds-pill is-warning">
+                  <span class="ds-pill__icon" aria-hidden="true">
+                    <svg viewBox="0 0 12 12"><path d="M6 3v3.5M6 9h.01"></path></svg>
+                  </span>
+                  <span>Review</span>
+                </span>
+                <span class="ds-pill is-danger">
+                  <span class="ds-pill__icon" aria-hidden="true">
+                    <svg viewBox="0 0 12 12"><path d="m3.5 3.5 5 5M8.5 3.5l-5 5"></path></svg>
+                  </span>
+                  <span>Blocked</span>
                 </span>
               </div>
             </article>
@@ -653,10 +677,12 @@
                     <span class="ds-select-value">All environments</span>
                     <i class="ds-select-chevron" aria-hidden="true"></i>
                   </button>
-                  <div class="ds-select-popover" id="components-select-menu" role="listbox" hidden>
-                    <button class="ds-select-option" type="button" role="option" aria-selected="true">All environments</button>
-                    <button class="ds-select-option" type="button" role="option" aria-selected="false">Production</button>
-                    <button class="ds-select-option" type="button" role="option" aria-selected="false">Preview</button>
+                  <div class="ds-select-popover" id="components-select-menu" role="listbox" data-ds-scrollbar hidden>
+                    <div class="ds-select-options" data-ds-scrollbar-viewport>
+                      <button class="ds-select-option" type="button" role="option" aria-selected="true">All environments</button>
+                      <button class="ds-select-option" type="button" role="option" aria-selected="false">Production</button>
+                      <button class="ds-select-option" type="button" role="option" aria-selected="false">Preview</button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -817,6 +843,55 @@
                 </div>
               </div>
             </article>
+
+            <article class="ds-component-card" data-contract-example="scroll-shell">
+              <h2 class="ds-component-card__label">Scroll Shell</h2>
+              <div class="ds-component-specimen ds-component-specimen--scroll-shell">
+                <section class="ds-scroll-shell">
+                  <header class="ds-scroll-shell__header">Fixed header</header>
+                  <div class="ds-scroll-shell__body-frame" data-ds-scrollbar>
+                    <div class="ds-scroll-shell__body" data-ds-scrollbar-viewport>
+                      <p>The middle region scrolls independently.</p>
+                      <p>The header and footer remain aligned and fixed.</p>
+                      <p>Overflow stays clipped to this body frame.</p>
+                      <p>Drag the vertical pill to move this content.</p>
+                    </div>
+                  </div>
+                  <footer class="ds-scroll-shell__footer">Fixed footer</footer>
+                </section>
+              </div>
+            </article>
+
+            <article class="ds-component-card ds-component-card--wide" data-contract-example="markdown-editor">
+              <h2 class="ds-component-card__label">Markdown Editor</h2>
+              <div class="ds-component-specimen">
+                <div class="ds-markdown-editor" data-ds-markdown-editor>
+                  <div class="ds-markdown-editor__heading">
+                    <label class="ds-markdown-editor__label" for="components-markdown">Description</label>
+                    <span class="ds-markdown-editor__hint">Markdown supported</span>
+                  </div>
+                  <div class="ds-markdown-editor__surface">
+                    <div class="ds-markdown-editor__toolbar" role="toolbar" aria-label="Description formatting">
+                      <button type="button" data-ds-markdown-action="heading">Heading</button>
+                      <button type="button" data-ds-markdown-action="bold"><strong>B</strong></button>
+                      <button type="button" data-ds-markdown-action="italic"><em>I</em></button>
+                      <button type="button" data-ds-markdown-action="bullet-list">• List</button>
+                      <button type="button" data-ds-markdown-action="numbered-list">1. List</button>
+                      <button type="button" data-ds-markdown-action="link">Link</button>
+                      <button type="button" data-ds-markdown-action="import">Import text</button>
+                      <input class="ds-markdown-editor__file-input" type="file" accept=".txt,.md,text/plain,text/markdown" data-ds-markdown-file tabindex="-1">
+                      <span class="ds-markdown-editor__toolbar-spacer"></span>
+                      <button type="button" data-ds-markdown-action="preview" aria-pressed="false">Preview</button>
+                    </div>
+                    <textarea class="ds-markdown-editor__textarea" id="components-markdown" rows="8" maxlength="20000" data-ds-markdown-input>## Product update
+
+Use **Markdown** to keep long-form content clear and consistent.</textarea>
+                    <div class="ds-markdown-editor__preview" data-ds-markdown-preview role="region" aria-label="Description preview" hidden></div>
+                  </div>
+                  <span class="ds-markdown-editor__footer" data-ds-markdown-count></span>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
 
@@ -880,6 +955,8 @@
             </div>
           </div>
         </section>
+        </div>
+        <span class="ds-scrollbar__track" aria-hidden="true"><span class="ds-scrollbar__thumb"></span></span>
       </main>
 
       <footer class="footer">
@@ -912,6 +989,7 @@
             <kbd>Esc</kbd>
           </div>
           <div class="command-body" data-ds-scrollbar>
+            <div class="command-body-viewport" data-ds-scrollbar-viewport>
             <div class="command-heading">Search tips</div>
             <button class="command-row active" type="button">
               <svg class="command-icon" viewBox="0 0 20 20" aria-hidden="true">
@@ -966,6 +1044,7 @@
               <span class="command-dash"></span>
               <span>Search D1 databases</span>
             </button>
+            </div>
           </div>
           <div class="command-footer">
             <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
@@ -980,6 +1059,7 @@
     <script src="design-system/side-menu/side-menu.behavior.js"></script>
     <script src="design-system/modal/modal.behavior.js"></script>
     <script src="design-system/upload/upload.behavior.js"></script>
+    <script src="design-system/markdown-editor/markdown-editor.behavior.js"></script>
     <script>
       const stage = document.querySelector(".stage");
       const sidebarToggle = document.querySelector(".sidebar-toggle");
@@ -995,6 +1075,7 @@
       const widgetActionItems = document.querySelectorAll(".widget-action-item");
       const selectMenus = document.querySelectorAll("[data-select-menu]");
       const contentSurface = document.querySelector(".content");
+      const contentViewport = document.querySelector(".content-scroll-viewport");
       const contentViews = document.querySelectorAll("[data-view]");
       const viewTargets = document.querySelectorAll("[data-view-target]");
       const jobsBrowse = document.querySelector("[data-jobs-browse]");
@@ -1037,7 +1118,14 @@
         panel.dataset.placementY = placementY;
         panel.dataset.alignX = alignX;
         panel.style.maxHeight = `${Math.floor(availableBlock)}px`;
-        panel.style.overflowY = panelRect.height > availableBlock ? "auto" : "";
+        const scrollViewport = panel.querySelector(":scope > [data-ds-scrollbar-viewport]");
+        if (scrollViewport) {
+          scrollViewport.style.maxHeight = `${Math.floor(availableBlock)}px`;
+          scrollViewport.style.overflowY = panelRect.height > availableBlock ? "auto" : "";
+          panel.style.overflowY = "hidden";
+        } else {
+          panel.style.overflowY = panelRect.height > availableBlock ? "auto" : "";
+        }
         window.AlignedScrollbar?.update(panel);
 
         if (root) {
@@ -1050,12 +1138,14 @@
         stage.classList.toggle("sidebar-collapsed", !isExpanded);
         sidebarToggle.setAttribute("aria-expanded", String(isExpanded));
         sidebarToggle.setAttribute("aria-label", isExpanded ? "Collapse sidebar" : "Expand sidebar");
+        window.requestAnimationFrame(() => window.AlignedScrollbar?.update(sidebarMenu));
       }
 
       function setSecurityExpanded(isExpanded) {
         sidebarMenu.classList.toggle("security-collapsed", !isExpanded);
         securityToggle.setAttribute("aria-expanded", String(isExpanded));
         securitySubmenu.setAttribute("aria-hidden", String(!isExpanded));
+        window.requestAnimationFrame(() => window.AlignedScrollbar?.update(sidebarMenu));
       }
 
       function setActiveView(viewName, activeTarget) {
@@ -1084,7 +1174,7 @@
 
         contentSurface.dataset.activeView = viewName;
         contentSurface.setAttribute("aria-label", activeView.getAttribute("aria-label") || "Application page");
-        contentSurface.scrollTop = 0;
+        contentViewport.scrollTop = 0;
         window.AlignedScrollbar?.update(contentSurface);
       }
 
@@ -1125,7 +1215,7 @@
 
           window.requestAnimationFrame(() => {
             jobsApplication.classList.add("is-visible");
-            contentSurface.scrollTop = 0;
+            contentViewport.scrollTop = 0;
             jobsBack.focus({ preventScroll: true });
             window.AlignedScrollbar?.update(contentSurface);
           });
@@ -1144,7 +1234,7 @@
 
           window.requestAnimationFrame(() => {
             jobsBrowse.classList.add("is-visible");
-            contentSurface.scrollTop = 0;
+            contentViewport.scrollTop = 0;
             document.querySelector("[data-view-target='jobs']")?.focus({ preventScroll: true });
             window.AlignedScrollbar?.update(contentSurface);
           });
@@ -1253,6 +1343,11 @@
           widgetActionsMenu.hidden = true;
           widgetActionsMenu.style.maxHeight = "";
           widgetActionsMenu.style.overflowY = "";
+          const viewport = widgetActionsMenu.querySelector(":scope > [data-ds-scrollbar-viewport]");
+          if (viewport) {
+            viewport.style.maxHeight = "";
+            viewport.style.overflowY = "";
+          }
         }, 180);
       }
 
@@ -1289,6 +1384,13 @@
         selectCloseTimers.set(menu, window.setTimeout(() => {
           popover.hidden = true;
           menu.classList.remove("is-open");
+          popover.style.maxHeight = "";
+          popover.style.overflowY = "";
+          const viewport = popover.querySelector(":scope > [data-ds-scrollbar-viewport]");
+          if (viewport) {
+            viewport.style.maxHeight = "";
+            viewport.style.overflowY = "";
+          }
         }, 180));
       }
 

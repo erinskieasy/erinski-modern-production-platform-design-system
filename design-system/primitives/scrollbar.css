@@ -14,6 +14,14 @@
   position: relative;
 }
 
+[data-ds-scrollbar-viewport] {
+  scrollbar-width: none;
+}
+
+[data-ds-scrollbar-viewport]::-webkit-scrollbar {
+  display: none;
+}
+
 [data-ds-scrollbar]::-webkit-scrollbar {
   display: none;
 }
@@ -27,7 +35,12 @@
   block-size: 100%;
   opacity: 0;
   pointer-events: none;
+  touch-action: none;
   transition: opacity var(--ds-motion-hover, 180ms ease);
+}
+
+[data-ds-scrollbar] > .ds-scrollbar__track[hidden] {
+  display: none;
 }
 
 [data-ds-scrollbar].is-scrollbar-active > .ds-scrollbar__track {
@@ -36,10 +49,23 @@
 
 .ds-scrollbar__thumb {
   position: absolute;
-  inset-inline-end: calc((var(--ds-scrollbar-track-inline-size) - var(--ds-scrollbar-thumb-inline-size)) / 2);
+  inset-inline-end: 0;
   inset-block-start: 0;
-  inline-size: var(--ds-scrollbar-thumb-inline-size);
+  inline-size: var(--ds-scrollbar-track-inline-size);
   min-block-size: var(--ds-scrollbar-thumb-min-block-size);
+  border-inline: calc((var(--ds-scrollbar-track-inline-size) - var(--ds-scrollbar-thumb-inline-size)) / 2) solid transparent;
   border-radius: 999px;
   background: var(--ds-scrollbar-thumb-color);
+  background-clip: content-box;
+  cursor: grab;
+  pointer-events: auto;
+  touch-action: none;
+}
+
+[data-ds-scrollbar].is-scrollbar-dragging > .ds-scrollbar__track {
+  opacity: 1;
+}
+
+[data-ds-scrollbar].is-scrollbar-dragging .ds-scrollbar__thumb {
+  cursor: grabbing;
 }

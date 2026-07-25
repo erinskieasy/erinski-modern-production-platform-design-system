@@ -5,7 +5,7 @@ A production-oriented design system for building quiet, consistent interfaces wi
 ## What is included
 
 - Foundation tokens for color, typography, rhythm, and motion
-- Reusable buttons, pills, menus, tables, modals, upload surfaces, login flows, side navigation, and scroll primitives
+- Reusable buttons, semantic pills, menus, tables, modals, upload surfaces, login flows, side navigation, fixed scroll shells, draggable custom scrollbars, and a Markdown editor
 - A browser-based component showcase
 - Contract tests that keep documented specimens synchronized with component implementations
 

@@ -33,7 +33,14 @@
     panel.dataset.placementY = placementY;
     panel.dataset.alignX = alignX;
     panel.style.maxBlockSize = `${Math.floor(availableBlock)}px`;
-    panel.style.overflowY = panelRect.height > availableBlock ? "auto" : "";
+    const scrollViewport = panel.querySelector(":scope > [data-ds-scrollbar-viewport]");
+    if (scrollViewport) {
+      scrollViewport.style.maxBlockSize = `${Math.floor(availableBlock)}px`;
+      scrollViewport.style.overflowY = panelRect.height > availableBlock ? "auto" : "";
+      panel.style.overflowY = "hidden";
+    } else {
+      panel.style.overflowY = panelRect.height > availableBlock ? "auto" : "";
+    }
 
     if (root) {
       root.dataset.placementY = placementY;
@@ -48,6 +55,11 @@
 
     panel.style.maxBlockSize = "";
     panel.style.overflowY = "";
+    const scrollViewport = panel.querySelector(":scope > [data-ds-scrollbar-viewport]");
+    if (scrollViewport) {
+      scrollViewport.style.maxBlockSize = "";
+      scrollViewport.style.overflowY = "";
+    }
 
     if (root) {
       delete root.dataset.placementY;

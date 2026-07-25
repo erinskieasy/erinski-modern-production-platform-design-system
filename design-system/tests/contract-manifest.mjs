@@ -21,11 +21,12 @@ export const contractManifest = [
         file: "primitives/pill.css",
         rules: [
           [".ds-pill", "gap: var(--ds-icon-label-gap)", "border-radius: 999px", "font: var(--ds-font-weight-normal)"],
-          [".ds-pill__icon", "inline-size: 18px", "block-size: 18px", "border-radius: 50%"]
+          [".ds-pill__icon", "inline-size: 18px", "block-size: 18px", "border-radius: 50%"],
+          [".ds-pill.is-success .ds-pill__icon", "background: var(--ds-color-success)"]
         ]
       }
     ],
-    markup: ["class=\"ds-pill\"", "ds-pill__icon"]
+    markup: ["ds-pill is-success", "ds-pill is-warning", "ds-pill is-danger", "ds-pill__icon"]
   },
   {
     id: "pill-button",
@@ -183,5 +184,47 @@ export const contractManifest = [
       ["modal/modal.behavior.js", "data-ds-modal-trigger", "Escape", "focus", "data-ds-modal-close"]
     ],
     markup: ["data-ds-modal-trigger", "data-ds-modal", "role=\"dialog\"", "aria-modal=\"true\"", "ds-modal__header", "ds-modal__body", "ds-modal__footer"]
+  },
+  {
+    id: "scroll-shell",
+    label: "Scroll Shell",
+    css: [
+      {
+        file: "primitives/scroll-shell.css",
+        rules: [
+          [".ds-scroll-shell", "grid-template-rows: var(--ds-scroll-shell-header-height) minmax(0, 1fr) var(--ds-scroll-shell-footer-height)", "block-size: 100%", "overflow: hidden"],
+          [".ds-scroll-shell__body-frame", "position: relative", "min-block-size: 0", "overflow: hidden"],
+          [".ds-scroll-shell__body", "block-size: 100%", "overflow-y: auto", "overscroll-behavior: contain"]
+        ]
+      },
+      {
+        file: "primitives/scrollbar.css",
+        rules: [
+          [".ds-scrollbar__thumb", "inline-size: var(--ds-scrollbar-track-inline-size)", "cursor: grab", "pointer-events: auto"]
+        ]
+      }
+    ],
+    scripts: [
+      ["primitives/scrollbar.behavior.js", "data-ds-scrollbar-viewport", "setPointerCapture", "is-scrollbar-dragging", "ResizeObserver"]
+    ],
+    markup: ["class=\"ds-scroll-shell\"", "ds-scroll-shell__header", "ds-scroll-shell__body-frame", "data-ds-scrollbar", "data-ds-scrollbar-viewport", "ds-scroll-shell__footer"]
+  },
+  {
+    id: "markdown-editor",
+    label: "Markdown Editor",
+    css: [
+      {
+        file: "markdown-editor/markdown-editor.css",
+        rules: [
+          [".ds-markdown-editor", "display: grid", "font-family: var(--ds-font-family-ui)"],
+          [".ds-markdown-editor__surface", "overflow: hidden", "border-radius: var(--ds-radius-control)"],
+          [".ds-markdown-editor__textarea", "min-block-size: 250px", "resize: vertical"]
+        ]
+      }
+    ],
+    scripts: [
+      ["markdown-editor/markdown-editor.behavior.js", "data-ds-markdown-action", "bullet-list", "numbered-list", "ds-markdown:preview", "data-ds-markdown-file"]
+    ],
+    markup: ["data-ds-markdown-editor", "data-ds-markdown-action=\"bold\"", "data-ds-markdown-action=\"preview\"", "data-ds-markdown-input", "data-ds-markdown-preview", "data-ds-markdown-count"]
   }
 ];

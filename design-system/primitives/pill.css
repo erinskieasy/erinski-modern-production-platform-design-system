@@ -28,6 +28,28 @@
   color: var(--ds-color-white);
 }
 
+.ds-pill.is-success .ds-pill__icon {
+  background: var(--ds-color-success);
+}
+
+.ds-pill.is-warning .ds-pill__icon {
+  background: var(--ds-color-warning);
+}
+
+.ds-pill.is-danger .ds-pill__icon,
+.ds-pill.is-error .ds-pill__icon {
+  background: var(--ds-color-danger);
+}
+
+.ds-pill.is-info .ds-pill__icon {
+  background: var(--ds-color-info);
+}
+
+.ds-pill.is-neutral .ds-pill__icon,
+.ds-pill.is-idle .ds-pill__icon {
+  background: var(--ds-color-icon-muted);
+}
+
 .ds-pill__icon svg {
   inline-size: 12px;
   block-size: 12px;

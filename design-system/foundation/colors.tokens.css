@@ -29,6 +29,9 @@
   --ds-color-accent: #287bff;
   --ds-color-accent-strong: #1e79ff;
   --ds-color-accent-border: #0d5bd7;
+  --ds-color-success: #238b59;
+  --ds-color-warning: #996014;
+  --ds-color-info: var(--ds-color-accent);
   --ds-color-danger: #ff1f2f;
   --ds-color-action: var(--ds-color-text-default);
   --ds-color-action-hover: #4b4b4b;

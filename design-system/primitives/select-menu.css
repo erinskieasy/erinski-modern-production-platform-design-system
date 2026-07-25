@@ -158,6 +158,12 @@
   pointer-events: auto;
 }
 
+.ds-select-options {
+  max-block-size: inherit;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
 .ds-select-option {
   display: flex;
   align-items: center;

@@ -2,8 +2,11 @@
 @import url("../foundation/motion.tokens.css");
 
 .ds-scroll-shell {
+  --ds-scroll-shell-header-height: 58px;
+  --ds-scroll-shell-footer-height: 40px;
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-rows: var(--ds-scroll-shell-header-height) minmax(0, 1fr) var(--ds-scroll-shell-footer-height);
+  block-size: 100%;
   min-block-size: 0;
   overflow: hidden;
   background: var(--ds-color-surface-raised);
@@ -11,13 +14,24 @@
 
 .ds-scroll-shell__header,
 .ds-scroll-shell__footer {
-  flex: 0 0 auto;
+  position: relative;
+  z-index: 2;
+  min-block-size: 0;
   background: var(--ds-color-surface-raised);
 }
 
-.ds-scroll-shell__body {
+.ds-scroll-shell__body-frame {
+  position: relative;
   min-block-size: 0;
-  overflow: auto;
+  overflow: hidden;
+}
+
+.ds-scroll-shell__body {
+  block-size: 100%;
+  min-block-size: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   scrollbar-width: none;
   scroll-behavior: smooth;
 }
